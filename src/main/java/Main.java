@@ -80,12 +80,11 @@ public class Main {
 
                 File saveFile = new File(new File("").getAbsolutePath() + File.separator + "diffs" + File.separator + "diff" + i + ".txt");
                 FileUtils.writeStringToFile(saveFile, xml[2] + "\n" + diff);
+                System.out.println(i + "done.");
                 i++;
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            
-            System.out.println(i + "done.");
         }
 
         System.out.println("done.");

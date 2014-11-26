@@ -1,0 +1,3 @@
+[submodule "DiffBasedWebTester"]
+	path = DiffBasedWebTester
+	url = https://github.com/exKAZUu/DiffBasedWebTester.git

@@ -1,0 +1,16 @@
+# Maven files
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# IDEA files
+.idea/
+
+# other files
+log/
+diffs/
+xmls/
+

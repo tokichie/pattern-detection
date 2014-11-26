@@ -19,7 +19,7 @@ public class Main {
     public static void main(String args[]) {
         RepositoryCrawler.Crawl();
         List<File> files = RepositoryCrawler.getFilelist();
-        HashMap<String, String> fileMap = new HashMap<>();
+        HashMap<String, String> fileMap = new HashMap<String, String>();
         List<String[]> xmls = new ArrayList<String[]>();
         System.out.println(files.size());
         int i = 1;
@@ -72,11 +72,13 @@ public class Main {
         i = 1;
         XDiffGenerator generator = new XDiffGenerator();
 
+
         for (String[] xml : xmls) {
             try {
                 String original = FileUtils.readFileToString(new File(xml[0]));
                 String comparison = FileUtils.readFileToString(new File(xml[1]));
                 String diff = generator.generateDiffContent(original, comparison, System.lineSeparator());
+
 
                 File saveFile = new File(new File("").getAbsolutePath() + File.separator + "diffs" + File.separator + "diff" + i + ".txt");
                 FileUtils.writeStringToFile(saveFile, xml[2] + "\n" + diff);
@@ -86,6 +88,9 @@ public class Main {
                 e.printStackTrace();
             }
         }
+
+        //String diff = generator.generateDiffContent("<html><body></body></html>", "<html><body><p>asd</p></body></html>", System.lineSeparator());
+        //System.out.println(diff);
 
         System.out.println("done.");
     }

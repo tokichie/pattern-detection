@@ -19,8 +19,8 @@ public class Main {
     public static void main(String args[]) {
         RepositoryCrawler.Crawl();
         List<File> files = RepositoryCrawler.getFilelist();
-        HashMap<String, String> fileMap = new HashMap<String, String>();
-        List<String[]> xmls = new ArrayList<String[]>();
+        HashMap<String, String> fileMap = new HashMap<>();
+        List<String[]> xmls = new ArrayList<>();
         System.out.println(files.size());
         int i = 1;
         for (File file : files) {
@@ -65,7 +65,7 @@ public class Main {
                 e.printStackTrace();
             }
 
-            if (i++ > 3) break;
+            if (i++ > 11) break;
             //i++;
         }
 
@@ -88,9 +88,6 @@ public class Main {
                 e.printStackTrace();
             }
         }
-
-        //String diff = generator.generateDiffContent("<html><body></body></html>", "<html><body><p>asd</p></body></html>", System.lineSeparator());
-        //System.out.println(diff);
 
         System.out.println("done.");
     }

@@ -1,0 +1,6 @@
+UPDATE:[oldValue="You may add text here", newValue=<DIV>You may add text here like this</DIV>]
+UPDATE:[oldValue="You may delete this node", newValue=<DIV>      You may re-indent here    </DIV>]
+UPDATE:[oldValue="You may re-indent here", newValue=<DIV>Additional content</DIV>]
+DELETE:<DIV>You may add class to this node</DIV>
+DELETE:<DIV><SPAN>You may delete it's parent</SPAN></DIV>
+INSERT:<DIV>You may add class to this node</DIV>

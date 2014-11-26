@@ -1,0 +1,19 @@
+@@ -11,1 +11,1 @@
+-    <div>You may add text here</div>
++    <div>You may add text here like this</div>
+@@ -13,1 @@
+-    <div>You may delete this node</div>
+@@ -15,1 +14,3 @@
+-    <div>You may re-indent here</div>
++    <div>
++      You may re-indent here
++    </div>
+@@ +19,1 @@
++    <div>Additional content</div>
+@@ -19,1 +21,1 @@
+-    <div>You may add class to this node</div>
++    <div class="additional">You may add class to this node</div>
+@@ -21,3 @@
+-    <div>
+-      <span>You may delete it's parent</span>
+-    </div>

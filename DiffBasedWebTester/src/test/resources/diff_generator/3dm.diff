@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diff>
+<diff:copy src="13" dst="11" run="3">
+<diff:insert dst="15">You may add text here like this</diff:insert>
+</diff:copy>
+<diff:copy src="16" dst="11" />
+<diff:copy src="16" dst="11" />
+<diff:copy src="19" dst="11" run="4">
+<diff:insert dst="22">Additional content</diff:insert>
+</diff:copy>
+<diff:copy src="16" dst="11" />
+<diff:insert dst="11">
+<div class="additional">
+<diff:copy src="35" />
+</div>
+</diff:insert>
+<diff:copy src="16" dst="11" />
+</diff>

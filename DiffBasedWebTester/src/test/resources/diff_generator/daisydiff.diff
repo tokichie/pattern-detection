@@ -1,0 +1,8 @@
+Additional: like this
+Additional:Some content<span class="diff-tag-html">&lt;/div&gt;</span><br /> <span class="diff-tag-html">&lt;div&gt;</span><br /> 
+Additional:<br /> 
+Additional:Additional content<span class="diff-tag-html">&lt;/div&gt;</span><br /> <span class="diff-tag-html">&lt;div&gt;</span>
+Additional: class=&quot;additional&quot;
+Additional:<span class="diff-tag-html">&lt;/div&gt;</span><br /> 
+Removed:You may delete this node<span class="diff-tag-html">&lt;/div&gt;</span><br /> <span class="diff-tag-html">&lt;div&gt;</span>Some content<span class="diff-tag-html">&lt;/div&gt;</span><br /> <span class="diff-tag-html">&lt;div&gt;</span>
+Removed: <span class="diff-tag-html">&lt;div&gt;</span><br /> <span class="diff-tag-html">&lt;span&gt;</span>You may delete it's parent<span class="diff-tag-html">&lt;/span&gt;</span><br /> <span class="diff-tag-html">&lt;/div&gt;</span><br /> <span class="diff-tag-html">&lt;/div&gt;</span><br /> 

@@ -1,0 +1,23 @@
+number of child nodes[A=25,B=23]
+text value[A=You may add text here,B=You may add text here like this]
+text value[A=You may delete this node,B=Some content]
+text value[A=Some content,B=
+      You may re-indent here
+    ]
+text value[A=You may re-indent here,B=Some content]
+text value[A=Some content,B=You may insert node just after this node]
+text value[A=You may insert node just after this node,B=Additional content]
+number of element attributes[A=0,B=1]
+attribute name[A=null,B=class]
+text value[A=
+    ,B=
+  ]
+number of child nodes[A=3,B=1]
+text value[A=
+      ,B=You may add text here like this]
+presence of child node[A=span,B=null]
+text value[A=
+    ,B=You may add text here like this]
+sequence of child nodes[A=2,B=0]
+sequence of child nodes[A=23,B=3]
+sequence of child nodes[A=24,B=22]

@@ -1,4 +1,4 @@
-# Maven files
+# Maven
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -6,10 +6,15 @@ pom.xml.versionsBackup
 pom.xml.next
 release.properties
 
-# IDEA files
+# IDEA
 .idea/
 
-# other files
+# Eclipse
+.settings/
+.project
+.classpath
+
+# Others
 log/
 diffs/
 xmls/

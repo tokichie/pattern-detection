@@ -1,0 +1,14 @@
+language: java
+jdk:
+  - openjdk7
+  - oraclejdk7
+  - oraclejdk8
+
+# Notify development list when needed
+notifications:
+ recipients:
+   - exkazuu@gmail.com
+   - toki211@gmail.com
+ email:
+   on_success: change
+   on_failure: always

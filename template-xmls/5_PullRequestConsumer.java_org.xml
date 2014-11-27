@@ -1,0 +1,2087 @@
+<compilationUnit id="-1">
+  <packageDeclaration id="2">
+    <PACKAGE id="string_literal5">
+      <TOKEN id="string_literal5" startline="17" startpos="0" endline="17" endpos="7">package</TOKEN>
+    </PACKAGE>
+    <qualifiedName id="6">
+      <IDENTIFIER id="IDENTIFIER224">
+        <TOKEN id="IDENTIFIER224" startline="17" startpos="8" endline="17" endpos="11">org</TOKEN>
+      </IDENTIFIER>
+      <DOT id="char_literal225">
+        <TOKEN id="char_literal225" startline="17" startpos="11" endline="17" endpos="12">.</TOKEN>
+      </DOT>
+      <IDENTIFIER id="IDENTIFIER226">
+        <TOKEN id="IDENTIFIER226" startline="17" startpos="12" endline="17" endpos="18">apache</TOKEN>
+      </IDENTIFIER>
+      <DOT id="char_literal225">
+        <TOKEN id="char_literal225" startline="17" startpos="18" endline="17" endpos="19">.</TOKEN>
+      </DOT>
+      <IDENTIFIER id="IDENTIFIER226">
+        <TOKEN id="IDENTIFIER226" startline="17" startpos="19" endline="17" endpos="24">camel</TOKEN>
+      </IDENTIFIER>
+      <DOT id="char_literal225">
+        <TOKEN id="char_literal225" startline="17" startpos="24" endline="17" endpos="25">.</TOKEN>
+      </DOT>
+      <IDENTIFIER id="IDENTIFIER226">
+        <TOKEN id="IDENTIFIER226" startline="17" startpos="25" endline="17" endpos="34">component</TOKEN>
+      </IDENTIFIER>
+      <DOT id="char_literal225">
+        <TOKEN id="char_literal225" startline="17" startpos="34" endline="17" endpos="35">.</TOKEN>
+      </DOT>
+      <IDENTIFIER id="IDENTIFIER226">
+        <TOKEN id="IDENTIFIER226" startline="17" startpos="35" endline="17" endpos="41">github</TOKEN>
+      </IDENTIFIER>
+      <DOT id="char_literal225">
+        <TOKEN id="char_literal225" startline="17" startpos="41" endline="17" endpos="42">.</TOKEN>
+      </DOT>
+      <IDENTIFIER id="IDENTIFIER226">
+        <TOKEN id="IDENTIFIER226" startline="17" startpos="42" endline="17" endpos="50">consumer</TOKEN>
+      </IDENTIFIER>
+    </qualifiedName>
+    <SEMI id="char_literal7">
+      <TOKEN id="char_literal7" startline="17" startpos="50" endline="17" endpos="51">;</TOKEN>
+    </SEMI>
+  </packageDeclaration>
+  <importDeclaration id="3">
+    <IMPORT id="string_literal14">
+      <TOKEN id="string_literal14" startline="19" startpos="0" endline="19" endpos="6">import</TOKEN>
+    </IMPORT>
+    <IDENTIFIER id="IDENTIFIER16">
+      <TOKEN id="IDENTIFIER16" startline="19" startpos="7" endline="19" endpos="11">java</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="19" startpos="11" endline="19" endpos="12">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="19" startpos="12" endline="19" endpos="16">util</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="19" startpos="16" endline="19" endpos="17">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="19" startpos="17" endline="19" endpos="21">List</TOKEN>
+    </IDENTIFIER>
+    <SEMI id="char_literal21">
+      <TOKEN id="char_literal21" startline="19" startpos="21" endline="19" endpos="22">;</TOKEN>
+    </SEMI>
+  </importDeclaration>
+  <importDeclaration id="3">
+    <IMPORT id="string_literal14">
+      <TOKEN id="string_literal14" startline="20" startpos="0" endline="20" endpos="6">import</TOKEN>
+    </IMPORT>
+    <IDENTIFIER id="IDENTIFIER16">
+      <TOKEN id="IDENTIFIER16" startline="20" startpos="7" endline="20" endpos="11">java</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="20" startpos="11" endline="20" endpos="12">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="20" startpos="12" endline="20" endpos="16">util</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="20" startpos="16" endline="20" endpos="17">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="20" startpos="17" endline="20" endpos="22">Stack</TOKEN>
+    </IDENTIFIER>
+    <SEMI id="char_literal21">
+      <TOKEN id="char_literal21" startline="20" startpos="22" endline="20" endpos="23">;</TOKEN>
+    </SEMI>
+  </importDeclaration>
+  <importDeclaration id="3">
+    <IMPORT id="string_literal14">
+      <TOKEN id="string_literal14" startline="22" startpos="0" endline="22" endpos="6">import</TOKEN>
+    </IMPORT>
+    <IDENTIFIER id="IDENTIFIER16">
+      <TOKEN id="IDENTIFIER16" startline="22" startpos="7" endline="22" endpos="10">org</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="22" startpos="10" endline="22" endpos="11">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="22" startpos="11" endline="22" endpos="17">apache</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="22" startpos="17" endline="22" endpos="18">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="22" startpos="18" endline="22" endpos="23">camel</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="22" startpos="23" endline="22" endpos="24">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="22" startpos="24" endline="22" endpos="32">Exchange</TOKEN>
+    </IDENTIFIER>
+    <SEMI id="char_literal21">
+      <TOKEN id="char_literal21" startline="22" startpos="32" endline="22" endpos="33">;</TOKEN>
+    </SEMI>
+  </importDeclaration>
+  <importDeclaration id="3">
+    <IMPORT id="string_literal14">
+      <TOKEN id="string_literal14" startline="23" startpos="0" endline="23" endpos="6">import</TOKEN>
+    </IMPORT>
+    <IDENTIFIER id="IDENTIFIER16">
+      <TOKEN id="IDENTIFIER16" startline="23" startpos="7" endline="23" endpos="10">org</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="23" startpos="10" endline="23" endpos="11">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="23" startpos="11" endline="23" endpos="17">apache</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="23" startpos="17" endline="23" endpos="18">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="23" startpos="18" endline="23" endpos="23">camel</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="23" startpos="23" endline="23" endpos="24">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="23" startpos="24" endline="23" endpos="33">Processor</TOKEN>
+    </IDENTIFIER>
+    <SEMI id="char_literal21">
+      <TOKEN id="char_literal21" startline="23" startpos="33" endline="23" endpos="34">;</TOKEN>
+    </SEMI>
+  </importDeclaration>
+  <importDeclaration id="3">
+    <IMPORT id="string_literal14">
+      <TOKEN id="string_literal14" startline="24" startpos="0" endline="24" endpos="6">import</TOKEN>
+    </IMPORT>
+    <IDENTIFIER id="IDENTIFIER16">
+      <TOKEN id="IDENTIFIER16" startline="24" startpos="7" endline="24" endpos="10">org</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="24" startpos="10" endline="24" endpos="11">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="24" startpos="11" endline="24" endpos="17">apache</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="24" startpos="17" endline="24" endpos="18">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="24" startpos="18" endline="24" endpos="23">camel</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="24" startpos="23" endline="24" endpos="24">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="24" startpos="24" endline="24" endpos="33">component</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="24" startpos="33" endline="24" endpos="34">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="24" startpos="34" endline="24" endpos="40">github</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="24" startpos="40" endline="24" endpos="41">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="24" startpos="41" endline="24" endpos="55">GitHubEndpoint</TOKEN>
+    </IDENTIFIER>
+    <SEMI id="char_literal21">
+      <TOKEN id="char_literal21" startline="24" startpos="55" endline="24" endpos="56">;</TOKEN>
+    </SEMI>
+  </importDeclaration>
+  <importDeclaration id="3">
+    <IMPORT id="string_literal14">
+      <TOKEN id="string_literal14" startline="25" startpos="0" endline="25" endpos="6">import</TOKEN>
+    </IMPORT>
+    <IDENTIFIER id="IDENTIFIER16">
+      <TOKEN id="IDENTIFIER16" startline="25" startpos="7" endline="25" endpos="10">org</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="25" startpos="10" endline="25" endpos="11">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="25" startpos="11" endline="25" endpos="17">apache</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="25" startpos="17" endline="25" endpos="18">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="25" startpos="18" endline="25" endpos="23">camel</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="25" startpos="23" endline="25" endpos="24">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="25" startpos="24" endline="25" endpos="27">spi</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="25" startpos="27" endline="25" endpos="28">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="25" startpos="28" endline="25" endpos="36">Registry</TOKEN>
+    </IDENTIFIER>
+    <SEMI id="char_literal21">
+      <TOKEN id="char_literal21" startline="25" startpos="36" endline="25" endpos="37">;</TOKEN>
+    </SEMI>
+  </importDeclaration>
+  <importDeclaration id="3">
+    <IMPORT id="string_literal14">
+      <TOKEN id="string_literal14" startline="26" startpos="0" endline="26" endpos="6">import</TOKEN>
+    </IMPORT>
+    <IDENTIFIER id="IDENTIFIER16">
+      <TOKEN id="IDENTIFIER16" startline="26" startpos="7" endline="26" endpos="10">org</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="26" startpos="10" endline="26" endpos="11">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="26" startpos="11" endline="26" endpos="18">eclipse</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="26" startpos="18" endline="26" endpos="19">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="26" startpos="19" endline="26" endpos="23">egit</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="26" startpos="23" endline="26" endpos="24">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="26" startpos="24" endline="26" endpos="30">github</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="26" startpos="30" endline="26" endpos="31">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="26" startpos="31" endline="26" endpos="35">core</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="26" startpos="35" endline="26" endpos="36">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="26" startpos="36" endline="26" endpos="47">PullRequest</TOKEN>
+    </IDENTIFIER>
+    <SEMI id="char_literal21">
+      <TOKEN id="char_literal21" startline="26" startpos="47" endline="26" endpos="48">;</TOKEN>
+    </SEMI>
+  </importDeclaration>
+  <importDeclaration id="3">
+    <IMPORT id="string_literal14">
+      <TOKEN id="string_literal14" startline="27" startpos="0" endline="27" endpos="6">import</TOKEN>
+    </IMPORT>
+    <IDENTIFIER id="IDENTIFIER16">
+      <TOKEN id="IDENTIFIER16" startline="27" startpos="7" endline="27" endpos="10">org</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="27" startpos="10" endline="27" endpos="11">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="27" startpos="11" endline="27" endpos="18">eclipse</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="27" startpos="18" endline="27" endpos="19">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="27" startpos="19" endline="27" endpos="23">egit</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="27" startpos="23" endline="27" endpos="24">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="27" startpos="24" endline="27" endpos="30">github</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="27" startpos="30" endline="27" endpos="31">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="27" startpos="31" endline="27" endpos="35">core</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="27" startpos="35" endline="27" endpos="36">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="27" startpos="36" endline="27" endpos="43">service</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="27" startpos="43" endline="27" endpos="44">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="27" startpos="44" endline="27" endpos="62">PullRequestService</TOKEN>
+    </IDENTIFIER>
+    <SEMI id="char_literal21">
+      <TOKEN id="char_literal21" startline="27" startpos="62" endline="27" endpos="63">;</TOKEN>
+    </SEMI>
+  </importDeclaration>
+  <importDeclaration id="3">
+    <IMPORT id="string_literal14">
+      <TOKEN id="string_literal14" startline="28" startpos="0" endline="28" endpos="6">import</TOKEN>
+    </IMPORT>
+    <IDENTIFIER id="IDENTIFIER16">
+      <TOKEN id="IDENTIFIER16" startline="28" startpos="7" endline="28" endpos="10">org</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="28" startpos="10" endline="28" endpos="11">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="28" startpos="11" endline="28" endpos="16">slf4j</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="28" startpos="16" endline="28" endpos="17">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="28" startpos="17" endline="28" endpos="23">Logger</TOKEN>
+    </IDENTIFIER>
+    <SEMI id="char_literal21">
+      <TOKEN id="char_literal21" startline="28" startpos="23" endline="28" endpos="24">;</TOKEN>
+    </SEMI>
+  </importDeclaration>
+  <importDeclaration id="3">
+    <IMPORT id="string_literal14">
+      <TOKEN id="string_literal14" startline="29" startpos="0" endline="29" endpos="6">import</TOKEN>
+    </IMPORT>
+    <IDENTIFIER id="IDENTIFIER16">
+      <TOKEN id="IDENTIFIER16" startline="29" startpos="7" endline="29" endpos="10">org</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="29" startpos="10" endline="29" endpos="11">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="29" startpos="11" endline="29" endpos="16">slf4j</TOKEN>
+    </IDENTIFIER>
+    <DOT id="char_literal17">
+      <TOKEN id="char_literal17" startline="29" startpos="16" endline="29" endpos="17">.</TOKEN>
+    </DOT>
+    <IDENTIFIER id="IDENTIFIER18">
+      <TOKEN id="IDENTIFIER18" startline="29" startpos="17" endline="29" endpos="30">LoggerFactory</TOKEN>
+    </IDENTIFIER>
+    <SEMI id="char_literal21">
+      <TOKEN id="char_literal21" startline="29" startpos="30" endline="29" endpos="31">;</TOKEN>
+    </SEMI>
+  </importDeclaration>
+  <typeDeclaration id="4">
+    <normalClassDeclaration id="43">
+      <modifiers id="45">
+        <PUBLIC id="string_literal30">
+          <TOKEN id="string_literal30" startline="31" startpos="0" endline="31" endpos="6">public</TOKEN>
+        </PUBLIC>
+      </modifiers>
+      <CLASS id="string_literal46">
+        <TOKEN id="string_literal46" startline="31" startpos="7" endline="31" endpos="12">class</TOKEN>
+      </CLASS>
+      <IDENTIFIER id="IDENTIFIER47">
+        <TOKEN id="IDENTIFIER47" startline="31" startpos="13" endline="31" endpos="32">PullRequestConsumer</TOKEN>
+      </IDENTIFIER>
+      <EXTENDS id="string_literal49">
+        <TOKEN id="string_literal49" startline="31" startpos="33" endline="31" endpos="40">extends</TOKEN>
+      </EXTENDS>
+      <type id="50">
+        <IDENTIFIER id="IDENTIFIER172">
+          <TOKEN id="IDENTIFIER172" startline="31" startpos="41" endline="31" endpos="63">AbstractGitHubConsumer</TOKEN>
+        </IDENTIFIER>
+      </type>
+      <classBody id="53">
+        <LBRACE id="char_literal97">
+          <TOKEN id="char_literal97" startline="31" startpos="64" endline="31" endpos="65">{</TOKEN>
+        </LBRACE>
+        <classBodyDeclaration id="98">
+          <fieldDeclaration id="107">
+            <modifiers id="133">
+              <PRIVATE id="string_literal32">
+                <TOKEN id="string_literal32" startline="32" startpos="4" endline="32" endpos="11">private</TOKEN>
+              </PRIVATE>
+              <STATIC id="string_literal33">
+                <TOKEN id="string_literal33" startline="32" startpos="12" endline="32" endpos="18">static</TOKEN>
+              </STATIC>
+              <FINAL id="string_literal35">
+                <TOKEN id="string_literal35" startline="32" startpos="19" endline="32" endpos="24">final</TOKEN>
+              </FINAL>
+              <TRANSIENT id="string_literal38">
+                <TOKEN id="string_literal38" startline="32" startpos="25" endline="32" endpos="34">transient</TOKEN>
+              </TRANSIENT>
+            </modifiers>
+            <type id="134">
+              <IDENTIFIER id="IDENTIFIER172">
+                <TOKEN id="IDENTIFIER172" startline="32" startpos="35" endline="32" endpos="41">Logger</TOKEN>
+              </IDENTIFIER>
+            </type>
+            <variableDeclarator id="135">
+              <IDENTIFIER id="IDENTIFIER139">
+                <TOKEN id="IDENTIFIER139" startline="32" startpos="42" endline="32" endpos="45">LOG</TOKEN>
+              </IDENTIFIER>
+              <EQ id="char_literal142">
+                <TOKEN id="char_literal142" startline="32" startpos="46" endline="32" endpos="47">=</TOKEN>
+              </EQ>
+              <variableInitializer id="143">
+                <primary id="501">
+                  <IDENTIFIER id="IDENTIFIER517">
+                    <TOKEN id="IDENTIFIER517" startline="32" startpos="48" endline="32" endpos="61">LoggerFactory</TOKEN>
+                  </IDENTIFIER>
+                  <DOT id="char_literal518">
+                    <TOKEN id="char_literal518" startline="32" startpos="61" endline="32" endpos="62">.</TOKEN>
+                  </DOT>
+                  <IDENTIFIER id="IDENTIFIER519">
+                    <TOKEN id="IDENTIFIER519" startline="32" startpos="62" endline="32" endpos="71">getLogger</TOKEN>
+                  </IDENTIFIER>
+                  <identifierSuffix id="520">
+                    <arguments id="545">
+                      <LPAREN id="char_literal626">
+                        <TOKEN id="char_literal626" startline="32" startpos="71" endline="32" endpos="72">(</TOKEN>
+                      </LPAREN>
+                      <expressionList id="627">
+                        <primary id="501">
+                          <IDENTIFIER id="IDENTIFIER517">
+                            <TOKEN id="IDENTIFIER517" startline="32" startpos="72" endline="32" endpos="91">PullRequestConsumer</TOKEN>
+                          </IDENTIFIER>
+                          <identifierSuffix id="520">
+                            <DOT id="char_literal546">
+                              <TOKEN id="char_literal546" startline="32" startpos="91" endline="32" endpos="92">.</TOKEN>
+                            </DOT>
+                            <CLASS id="string_literal547">
+                              <TOKEN id="string_literal547" startline="32" startpos="92" endline="32" endpos="97">class</TOKEN>
+                            </CLASS>
+                          </identifierSuffix>
+                        </primary>
+                      </expressionList>
+                      <RPAREN id="char_literal628">
+                        <TOKEN id="char_literal628" startline="32" startpos="97" endline="32" endpos="98">)</TOKEN>
+                      </RPAREN>
+                    </arguments>
+                  </identifierSuffix>
+                </primary>
+              </variableInitializer>
+            </variableDeclarator>
+            <SEMI id="char_literal138">
+              <TOKEN id="char_literal138" startline="32" startpos="98" endline="32" endpos="99">;</TOKEN>
+            </SEMI>
+          </fieldDeclaration>
+        </classBodyDeclaration>
+        <classBodyDeclaration id="98">
+          <fieldDeclaration id="107">
+            <modifiers id="133">
+              <PRIVATE id="string_literal32">
+                <TOKEN id="string_literal32" startline="34" startpos="4" endline="34" endpos="11">private</TOKEN>
+              </PRIVATE>
+            </modifiers>
+            <type id="134">
+              <IDENTIFIER id="IDENTIFIER172">
+                <TOKEN id="IDENTIFIER172" startline="34" startpos="12" endline="34" endpos="30">PullRequestService</TOKEN>
+              </IDENTIFIER>
+            </type>
+            <variableDeclarator id="135">
+              <IDENTIFIER id="IDENTIFIER139">
+                <TOKEN id="IDENTIFIER139" startline="34" startpos="31" endline="34" endpos="49">pullRequestService</TOKEN>
+              </IDENTIFIER>
+            </variableDeclarator>
+            <SEMI id="char_literal138">
+              <TOKEN id="char_literal138" startline="34" startpos="49" endline="34" endpos="50">;</TOKEN>
+            </SEMI>
+          </fieldDeclaration>
+        </classBodyDeclaration>
+        <classBodyDeclaration id="98">
+          <fieldDeclaration id="107">
+            <modifiers id="133">
+              <PRIVATE id="string_literal32">
+                <TOKEN id="string_literal32" startline="36" startpos="4" endline="36" endpos="11">private</TOKEN>
+              </PRIVATE>
+            </modifiers>
+            <type id="134">
+              <INT id="set182">
+                <TOKEN id="set182" startline="36" startpos="12" endline="36" endpos="15">int</TOKEN>
+              </INT>
+            </type>
+            <variableDeclarator id="135">
+              <IDENTIFIER id="IDENTIFIER139">
+                <TOKEN id="IDENTIFIER139" startline="36" startpos="16" endline="36" endpos="35">lastOpenPullRequest</TOKEN>
+              </IDENTIFIER>
+            </variableDeclarator>
+            <SEMI id="char_literal138">
+              <TOKEN id="char_literal138" startline="36" startpos="35" endline="36" endpos="36">;</TOKEN>
+            </SEMI>
+          </fieldDeclaration>
+        </classBodyDeclaration>
+        <classBodyDeclaration id="98">
+          <methodDeclaration id="108">
+            <modifiers id="111">
+              <PUBLIC id="string_literal30">
+                <TOKEN id="string_literal30" startline="38" startpos="4" endline="38" endpos="10">public</TOKEN>
+              </PUBLIC>
+            </modifiers>
+            <IDENTIFIER id="IDENTIFIER113">
+              <TOKEN id="IDENTIFIER113" startline="38" startpos="11" endline="38" endpos="30">PullRequestConsumer</TOKEN>
+            </IDENTIFIER>
+            <formalParameters id="114">
+              <LPAREN id="char_literal195">
+                <TOKEN id="char_literal195" startline="38" startpos="30" endline="38" endpos="31">(</TOKEN>
+              </LPAREN>
+              <formalParameterDecls id="196">
+                <normalParameterDecl id="199">
+                  <variableModifiers id="205" />
+                  <type id="206">
+                    <IDENTIFIER id="IDENTIFIER172">
+                      <TOKEN id="IDENTIFIER172" startline="38" startpos="31" endline="38" endpos="45">GitHubEndpoint</TOKEN>
+                    </IDENTIFIER>
+                  </type>
+                  <IDENTIFIER id="IDENTIFIER207">
+                    <TOKEN id="IDENTIFIER207" startline="38" startpos="46" endline="38" endpos="54">endpoint</TOKEN>
+                  </IDENTIFIER>
+                </normalParameterDecl>
+                <COMMA id="char_literal200">
+                  <TOKEN id="char_literal200" startline="38" startpos="54" endline="38" endpos="55">,</TOKEN>
+                </COMMA>
+                <normalParameterDecl id="201">
+                  <variableModifiers id="205" />
+                  <type id="206">
+                    <IDENTIFIER id="IDENTIFIER172">
+                      <TOKEN id="IDENTIFIER172" startline="38" startpos="56" endline="38" endpos="65">Processor</TOKEN>
+                    </IDENTIFIER>
+                  </type>
+                  <IDENTIFIER id="IDENTIFIER207">
+                    <TOKEN id="IDENTIFIER207" startline="38" startpos="66" endline="38" endpos="75">processor</TOKEN>
+                  </IDENTIFIER>
+                </normalParameterDecl>
+              </formalParameterDecls>
+              <RPAREN id="char_literal197">
+                <TOKEN id="char_literal197" startline="38" startpos="75" endline="38" endpos="76">)</TOKEN>
+              </RPAREN>
+            </formalParameters>
+            <THROWS id="string_literal115">
+              <TOKEN id="string_literal115" startline="38" startpos="77" endline="38" endpos="83">throws</TOKEN>
+            </THROWS>
+            <qualifiedNameList id="116">
+              <IDENTIFIER id="IDENTIFIER224">
+                <TOKEN id="IDENTIFIER224" startline="38" startpos="84" endline="38" endpos="93">Exception</TOKEN>
+              </IDENTIFIER>
+            </qualifiedNameList>
+            <LBRACE id="char_literal117">
+              <TOKEN id="char_literal117" startline="38" startpos="94" endline="38" endpos="95">{</TOKEN>
+            </LBRACE>
+            <explicitConstructorInvocation id="118">
+              <SUPER id="set215">
+                <TOKEN id="set215" startline="39" startpos="8" endline="39" endpos="13">super</TOKEN>
+              </SUPER>
+              <arguments id="216">
+                <LPAREN id="char_literal626">
+                  <TOKEN id="char_literal626" startline="39" startpos="13" endline="39" endpos="14">(</TOKEN>
+                </LPAREN>
+                <expressionList id="627">
+                  <expression id="411">
+                    <IDENTIFIER id="IDENTIFIER517">
+                      <TOKEN id="IDENTIFIER517" startline="39" startpos="14" endline="39" endpos="22">endpoint</TOKEN>
+                    </IDENTIFIER>
+                  </expression>
+                  <COMMA id="char_literal412">
+                    <TOKEN id="char_literal412" startline="39" startpos="22" endline="39" endpos="23">,</TOKEN>
+                  </COMMA>
+                  <expression id="413">
+                    <IDENTIFIER id="IDENTIFIER517">
+                      <TOKEN id="IDENTIFIER517" startline="39" startpos="24" endline="39" endpos="33">processor</TOKEN>
+                    </IDENTIFIER>
+                  </expression>
+                </expressionList>
+                <RPAREN id="char_literal628">
+                  <TOKEN id="char_literal628" startline="39" startpos="33" endline="39" endpos="34">)</TOKEN>
+                </RPAREN>
+              </arguments>
+              <SEMI id="char_literal217">
+                <TOKEN id="char_literal217" startline="39" startpos="34" endline="39" endpos="35">;</TOKEN>
+              </SEMI>
+            </explicitConstructorInvocation>
+            <blockStatement id="119">
+              <localVariableDeclarationStatement id="275">
+                <localVariableDeclaration id="278">
+                  <variableModifiers id="280" />
+                  <type id="281">
+                    <IDENTIFIER id="IDENTIFIER172">
+                      <TOKEN id="IDENTIFIER172" startline="41" startpos="8" endline="41" endpos="16">Registry</TOKEN>
+                    </IDENTIFIER>
+                  </type>
+                  <variableDeclarator id="282">
+                    <IDENTIFIER id="IDENTIFIER139">
+                      <TOKEN id="IDENTIFIER139" startline="41" startpos="17" endline="41" endpos="25">registry</TOKEN>
+                    </IDENTIFIER>
+                    <EQ id="char_literal142">
+                      <TOKEN id="char_literal142" startline="41" startpos="26" endline="41" endpos="27">=</TOKEN>
+                    </EQ>
+                    <variableInitializer id="143">
+                      <unaryExpressionNotPlusMinus id="495">
+                        <primary id="501">
+                          <IDENTIFIER id="IDENTIFIER517">
+                            <TOKEN id="IDENTIFIER517" startline="41" startpos="28" endline="41" endpos="36">endpoint</TOKEN>
+                          </IDENTIFIER>
+                          <DOT id="char_literal518">
+                            <TOKEN id="char_literal518" startline="41" startpos="36" endline="41" endpos="37">.</TOKEN>
+                          </DOT>
+                          <IDENTIFIER id="IDENTIFIER519">
+                            <TOKEN id="IDENTIFIER519" startline="41" startpos="37" endline="41" endpos="52">getCamelContext</TOKEN>
+                          </IDENTIFIER>
+                          <identifierSuffix id="520">
+                            <arguments id="545">
+                              <LPAREN id="char_literal626">
+                                <TOKEN id="char_literal626" startline="41" startpos="52" endline="41" endpos="53">(</TOKEN>
+                              </LPAREN>
+                              <RPAREN id="char_literal628">
+                                <TOKEN id="char_literal628" startline="41" startpos="53" endline="41" endpos="54">)</TOKEN>
+                              </RPAREN>
+                            </arguments>
+                          </identifierSuffix>
+                        </primary>
+                        <selector id="502">
+                          <DOT id="char_literal558">
+                            <TOKEN id="char_literal558" startline="41" startpos="54" endline="41" endpos="55">.</TOKEN>
+                          </DOT>
+                          <IDENTIFIER id="IDENTIFIER559">
+                            <TOKEN id="IDENTIFIER559" startline="41" startpos="55" endline="41" endpos="66">getRegistry</TOKEN>
+                          </IDENTIFIER>
+                          <arguments id="560">
+                            <LPAREN id="char_literal626">
+                              <TOKEN id="char_literal626" startline="41" startpos="66" endline="41" endpos="67">(</TOKEN>
+                            </LPAREN>
+                            <RPAREN id="char_literal628">
+                              <TOKEN id="char_literal628" startline="41" startpos="67" endline="41" endpos="68">)</TOKEN>
+                            </RPAREN>
+                          </arguments>
+                        </selector>
+                      </unaryExpressionNotPlusMinus>
+                    </variableInitializer>
+                  </variableDeclarator>
+                </localVariableDeclaration>
+                <SEMI id="char_literal279">
+                  <TOKEN id="char_literal279" startline="41" startpos="68" endline="41" endpos="69">;</TOKEN>
+                </SEMI>
+              </localVariableDeclarationStatement>
+            </blockStatement>
+            <blockStatement id="119">
+              <localVariableDeclarationStatement id="275">
+                <localVariableDeclaration id="278">
+                  <variableModifiers id="280" />
+                  <type id="281">
+                    <IDENTIFIER id="IDENTIFIER172">
+                      <TOKEN id="IDENTIFIER172" startline="42" startpos="8" endline="42" endpos="14">Object</TOKEN>
+                    </IDENTIFIER>
+                  </type>
+                  <variableDeclarator id="282">
+                    <IDENTIFIER id="IDENTIFIER139">
+                      <TOKEN id="IDENTIFIER139" startline="42" startpos="15" endline="42" endpos="22">service</TOKEN>
+                    </IDENTIFIER>
+                    <EQ id="char_literal142">
+                      <TOKEN id="char_literal142" startline="42" startpos="23" endline="42" endpos="24">=</TOKEN>
+                    </EQ>
+                    <variableInitializer id="143">
+                      <primary id="501">
+                        <IDENTIFIER id="IDENTIFIER517">
+                          <TOKEN id="IDENTIFIER517" startline="42" startpos="25" endline="42" endpos="33">registry</TOKEN>
+                        </IDENTIFIER>
+                        <DOT id="char_literal518">
+                          <TOKEN id="char_literal518" startline="42" startpos="33" endline="42" endpos="34">.</TOKEN>
+                        </DOT>
+                        <IDENTIFIER id="IDENTIFIER519">
+                          <TOKEN id="IDENTIFIER519" startline="42" startpos="34" endline="42" endpos="46">lookupByName</TOKEN>
+                        </IDENTIFIER>
+                        <identifierSuffix id="520">
+                          <arguments id="545">
+                            <LPAREN id="char_literal626">
+                              <TOKEN id="char_literal626" startline="42" startpos="46" endline="42" endpos="47">(</TOKEN>
+                            </LPAREN>
+                            <expressionList id="627">
+                              <StringLiteral id="set629">
+                                <TOKEN id="set629" startline="42" startpos="47" endline="42" endpos="73">"githubPullRequestService"</TOKEN>
+                              </StringLiteral>
+                            </expressionList>
+                            <RPAREN id="char_literal628">
+                              <TOKEN id="char_literal628" startline="42" startpos="73" endline="42" endpos="74">)</TOKEN>
+                            </RPAREN>
+                          </arguments>
+                        </identifierSuffix>
+                      </primary>
+                    </variableInitializer>
+                  </variableDeclarator>
+                </localVariableDeclaration>
+                <SEMI id="char_literal279">
+                  <TOKEN id="char_literal279" startline="42" startpos="74" endline="42" endpos="75">;</TOKEN>
+                </SEMI>
+              </localVariableDeclarationStatement>
+            </blockStatement>
+            <blockStatement id="119">
+              <statement id="277">
+                <IF id="string_literal292">
+                  <TOKEN id="string_literal292" startline="43" startpos="8" endline="43" endpos="10">if</TOKEN>
+                </IF>
+                <parExpression id="293">
+                  <LPAREN id="char_literal408">
+                    <TOKEN id="char_literal408" startline="43" startpos="11" endline="43" endpos="12">(</TOKEN>
+                  </LPAREN>
+                  <expression id="409">
+                    <equalityExpression id="453">
+                      <instanceOfExpression id="456">
+                        <IDENTIFIER id="IDENTIFIER517">
+                          <TOKEN id="IDENTIFIER517" startline="43" startpos="12" endline="43" endpos="19">service</TOKEN>
+                        </IDENTIFIER>
+                      </instanceOfExpression>
+                      <BANGEQ id="set457">
+                        <TOKEN id="set457" startline="43" startpos="20" endline="43" endpos="22">!=</TOKEN>
+                      </BANGEQ>
+                      <instanceOfExpression id="458">
+                        <NullLiteral id="set629">
+                          <TOKEN id="set629" startline="43" startpos="23" endline="43" endpos="27">null</TOKEN>
+                        </NullLiteral>
+                      </instanceOfExpression>
+                    </equalityExpression>
+                  </expression>
+                  <RPAREN id="char_literal410">
+                    <TOKEN id="char_literal410" startline="43" startpos="27" endline="43" endpos="28">)</TOKEN>
+                  </RPAREN>
+                </parExpression>
+                <statement id="294">
+                  <block id="285">
+                    <LBRACE id="char_literal272">
+                      <TOKEN id="char_literal272" startline="43" startpos="29" endline="43" endpos="30">{</TOKEN>
+                    </LBRACE>
+                    <blockStatement id="273">
+                      <statement id="277">
+                        <expression id="290">
+                          <primary id="501">
+                            <IDENTIFIER id="IDENTIFIER517">
+                              <TOKEN id="IDENTIFIER517" startline="44" startpos="12" endline="44" endpos="15">LOG</TOKEN>
+                            </IDENTIFIER>
+                            <DOT id="char_literal518">
+                              <TOKEN id="char_literal518" startline="44" startpos="15" endline="44" endpos="16">.</TOKEN>
+                            </DOT>
+                            <IDENTIFIER id="IDENTIFIER519">
+                              <TOKEN id="IDENTIFIER519" startline="44" startpos="16" endline="44" endpos="21">debug</TOKEN>
+                            </IDENTIFIER>
+                            <identifierSuffix id="520">
+                              <arguments id="545">
+                                <LPAREN id="char_literal626">
+                                  <TOKEN id="char_literal626" startline="44" startpos="21" endline="44" endpos="22">(</TOKEN>
+                                </LPAREN>
+                                <expressionList id="627">
+                                  <additiveExpression id="471">
+                                    <multiplicativeExpression id="481">
+                                      <StringLiteral id="set629">
+                                        <TOKEN id="set629" startline="44" startpos="22" endline="44" endpos="67">"Using PullRequestService found in registry "</TOKEN>
+                                      </StringLiteral>
+                                    </multiplicativeExpression>
+                                    <PLUS id="set482">
+                                      <TOKEN id="set482" startline="44" startpos="68" endline="44" endpos="69">+</TOKEN>
+                                    </PLUS>
+                                    <multiplicativeExpression id="483">
+                                      <unaryExpressionNotPlusMinus id="495">
+                                        <primary id="501">
+                                          <IDENTIFIER id="IDENTIFIER517">
+                                            <TOKEN id="IDENTIFIER517" startline="44" startpos="70" endline="44" endpos="77">service</TOKEN>
+                                          </IDENTIFIER>
+                                          <DOT id="char_literal518">
+                                            <TOKEN id="char_literal518" startline="44" startpos="77" endline="44" endpos="78">.</TOKEN>
+                                          </DOT>
+                                          <IDENTIFIER id="IDENTIFIER519">
+                                            <TOKEN id="IDENTIFIER519" startline="44" startpos="78" endline="44" endpos="86">getClass</TOKEN>
+                                          </IDENTIFIER>
+                                          <identifierSuffix id="520">
+                                            <arguments id="545">
+                                              <LPAREN id="char_literal626">
+                                                <TOKEN id="char_literal626" startline="44" startpos="86" endline="44" endpos="87">(</TOKEN>
+                                              </LPAREN>
+                                              <RPAREN id="char_literal628">
+                                                <TOKEN id="char_literal628" startline="44" startpos="87" endline="44" endpos="88">)</TOKEN>
+                                              </RPAREN>
+                                            </arguments>
+                                          </identifierSuffix>
+                                        </primary>
+                                        <selector id="502">
+                                          <DOT id="char_literal558">
+                                            <TOKEN id="char_literal558" startline="44" startpos="88" endline="44" endpos="89">.</TOKEN>
+                                          </DOT>
+                                          <IDENTIFIER id="IDENTIFIER559">
+                                            <TOKEN id="IDENTIFIER559" startline="44" startpos="89" endline="44" endpos="105">getCanonicalName</TOKEN>
+                                          </IDENTIFIER>
+                                          <arguments id="560">
+                                            <LPAREN id="char_literal626">
+                                              <TOKEN id="char_literal626" startline="44" startpos="105" endline="44" endpos="106">(</TOKEN>
+                                            </LPAREN>
+                                            <RPAREN id="char_literal628">
+                                              <TOKEN id="char_literal628" startline="44" startpos="106" endline="44" endpos="107">)</TOKEN>
+                                            </RPAREN>
+                                          </arguments>
+                                        </selector>
+                                      </unaryExpressionNotPlusMinus>
+                                    </multiplicativeExpression>
+                                  </additiveExpression>
+                                </expressionList>
+                                <RPAREN id="char_literal628">
+                                  <TOKEN id="char_literal628" startline="44" startpos="107" endline="44" endpos="108">)</TOKEN>
+                                </RPAREN>
+                              </arguments>
+                            </identifierSuffix>
+                          </primary>
+                        </expression>
+                        <SEMI id="char_literal291">
+                          <TOKEN id="char_literal291" startline="44" startpos="108" endline="44" endpos="109">;</TOKEN>
+                        </SEMI>
+                      </statement>
+                    </blockStatement>
+                    <blockStatement id="273">
+                      <statement id="277">
+                        <expression id="290">
+                          <conditionalExpression id="414">
+                            <IDENTIFIER id="IDENTIFIER517">
+                              <TOKEN id="IDENTIFIER517" startline="45" startpos="12" endline="45" endpos="30">pullRequestService</TOKEN>
+                            </IDENTIFIER>
+                          </conditionalExpression>
+                          <assignmentOperator id="415">
+                            <EQ id="char_literal417">
+                              <TOKEN id="char_literal417" startline="45" startpos="31" endline="45" endpos="32">=</TOKEN>
+                            </EQ>
+                          </assignmentOperator>
+                          <expression id="416">
+                            <castExpression id="500">
+                              <LPAREN id="char_literal508">
+                                <TOKEN id="char_literal508" startline="45" startpos="33" endline="45" endpos="34">(</TOKEN>
+                              </LPAREN>
+                              <type id="509">
+                                <IDENTIFIER id="IDENTIFIER172">
+                                  <TOKEN id="IDENTIFIER172" startline="45" startpos="34" endline="45" endpos="52">PullRequestService</TOKEN>
+                                </IDENTIFIER>
+                              </type>
+                              <RPAREN id="char_literal510">
+                                <TOKEN id="char_literal510" startline="45" startpos="52" endline="45" endpos="53">)</TOKEN>
+                              </RPAREN>
+                              <unaryExpressionNotPlusMinus id="511">
+                                <IDENTIFIER id="IDENTIFIER517">
+                                  <TOKEN id="IDENTIFIER517" startline="45" startpos="54" endline="45" endpos="61">service</TOKEN>
+                                </IDENTIFIER>
+                              </unaryExpressionNotPlusMinus>
+                            </castExpression>
+                          </expression>
+                        </expression>
+                        <SEMI id="char_literal291">
+                          <TOKEN id="char_literal291" startline="45" startpos="61" endline="45" endpos="62">;</TOKEN>
+                        </SEMI>
+                      </statement>
+                    </blockStatement>
+                    <RBRACE id="char_literal274">
+                      <TOKEN id="char_literal274" startline="46" startpos="8" endline="46" endpos="9">}</TOKEN>
+                    </RBRACE>
+                  </block>
+                </statement>
+                <ELSE id="string_literal295">
+                  <TOKEN id="string_literal295" startline="46" startpos="10" endline="46" endpos="14">else</TOKEN>
+                </ELSE>
+                <statement id="296">
+                  <block id="285">
+                    <LBRACE id="char_literal272">
+                      <TOKEN id="char_literal272" startline="46" startpos="15" endline="46" endpos="16">{</TOKEN>
+                    </LBRACE>
+                    <blockStatement id="273">
+                      <statement id="277">
+                        <expression id="290">
+                          <conditionalExpression id="414">
+                            <IDENTIFIER id="IDENTIFIER517">
+                              <TOKEN id="IDENTIFIER517" startline="47" startpos="12" endline="47" endpos="30">pullRequestService</TOKEN>
+                            </IDENTIFIER>
+                          </conditionalExpression>
+                          <assignmentOperator id="415">
+                            <EQ id="char_literal417">
+                              <TOKEN id="char_literal417" startline="47" startpos="31" endline="47" endpos="32">=</TOKEN>
+                            </EQ>
+                          </assignmentOperator>
+                          <expression id="416">
+                            <creator id="524">
+                              <NEW id="string_literal578">
+                                <TOKEN id="string_literal578" startline="47" startpos="33" endline="47" endpos="36">new</TOKEN>
+                              </NEW>
+                              <classOrInterfaceTypeWithDiamond id="579">
+                                <IDENTIFIER id="IDENTIFIER177">
+                                  <TOKEN id="IDENTIFIER177" startline="47" startpos="37" endline="47" endpos="55">PullRequestService</TOKEN>
+                                </IDENTIFIER>
+                              </classOrInterfaceTypeWithDiamond>
+                              <classCreatorRest id="580">
+                                <arguments id="615">
+                                  <LPAREN id="char_literal626">
+                                    <TOKEN id="char_literal626" startline="47" startpos="55" endline="47" endpos="56">(</TOKEN>
+                                  </LPAREN>
+                                  <RPAREN id="char_literal628">
+                                    <TOKEN id="char_literal628" startline="47" startpos="56" endline="47" endpos="57">)</TOKEN>
+                                  </RPAREN>
+                                </arguments>
+                              </classCreatorRest>
+                            </creator>
+                          </expression>
+                        </expression>
+                        <SEMI id="char_literal291">
+                          <TOKEN id="char_literal291" startline="47" startpos="57" endline="47" endpos="58">;</TOKEN>
+                        </SEMI>
+                      </statement>
+                    </blockStatement>
+                    <RBRACE id="char_literal274">
+                      <TOKEN id="char_literal274" startline="48" startpos="8" endline="48" endpos="9">}</TOKEN>
+                    </RBRACE>
+                  </block>
+                </statement>
+              </statement>
+            </blockStatement>
+            <blockStatement id="119">
+              <statement id="277">
+                <expression id="290">
+                  <primary id="501">
+                    <IDENTIFIER id="IDENTIFIER517">
+                      <TOKEN id="IDENTIFIER517" startline="50" startpos="8" endline="50" endpos="19">initService</TOKEN>
+                    </IDENTIFIER>
+                    <identifierSuffix id="520">
+                      <arguments id="545">
+                        <LPAREN id="char_literal626">
+                          <TOKEN id="char_literal626" startline="50" startpos="19" endline="50" endpos="20">(</TOKEN>
+                        </LPAREN>
+                        <expressionList id="627">
+                          <IDENTIFIER id="IDENTIFIER517">
+                            <TOKEN id="IDENTIFIER517" startline="50" startpos="20" endline="50" endpos="38">pullRequestService</TOKEN>
+                          </IDENTIFIER>
+                        </expressionList>
+                        <RPAREN id="char_literal628">
+                          <TOKEN id="char_literal628" startline="50" startpos="38" endline="50" endpos="39">)</TOKEN>
+                        </RPAREN>
+                      </arguments>
+                    </identifierSuffix>
+                  </primary>
+                </expression>
+                <SEMI id="char_literal291">
+                  <TOKEN id="char_literal291" startline="50" startpos="39" endline="50" endpos="40">;</TOKEN>
+                </SEMI>
+              </statement>
+            </blockStatement>
+            <blockStatement id="119">
+              <statement id="277">
+                <expression id="290">
+                  <primary id="501">
+                    <IDENTIFIER id="IDENTIFIER517">
+                      <TOKEN id="IDENTIFIER517" startline="52" startpos="8" endline="52" endpos="11">LOG</TOKEN>
+                    </IDENTIFIER>
+                    <DOT id="char_literal518">
+                      <TOKEN id="char_literal518" startline="52" startpos="11" endline="52" endpos="12">.</TOKEN>
+                    </DOT>
+                    <IDENTIFIER id="IDENTIFIER519">
+                      <TOKEN id="IDENTIFIER519" startline="52" startpos="12" endline="52" endpos="16">info</TOKEN>
+                    </IDENTIFIER>
+                    <identifierSuffix id="520">
+                      <arguments id="545">
+                        <LPAREN id="char_literal626">
+                          <TOKEN id="char_literal626" startline="52" startpos="16" endline="52" endpos="17">(</TOKEN>
+                        </LPAREN>
+                        <expressionList id="627">
+                          <StringLiteral id="set629">
+                            <TOKEN id="set629" startline="52" startpos="17" endline="52" endpos="80">"GitHub PullRequestConsumer: Indexing current pull requests..."</TOKEN>
+                          </StringLiteral>
+                        </expressionList>
+                        <RPAREN id="char_literal628">
+                          <TOKEN id="char_literal628" startline="52" startpos="80" endline="52" endpos="81">)</TOKEN>
+                        </RPAREN>
+                      </arguments>
+                    </identifierSuffix>
+                  </primary>
+                </expression>
+                <SEMI id="char_literal291">
+                  <TOKEN id="char_literal291" startline="52" startpos="81" endline="52" endpos="82">;</TOKEN>
+                </SEMI>
+              </statement>
+            </blockStatement>
+            <blockStatement id="119">
+              <localVariableDeclarationStatement id="275">
+                <localVariableDeclaration id="278">
+                  <variableModifiers id="280" />
+                  <type id="281">
+                    <classOrInterfaceType id="166">
+                      <IDENTIFIER id="IDENTIFIER172">
+                        <TOKEN id="IDENTIFIER172" startline="53" startpos="8" endline="53" endpos="12">List</TOKEN>
+                      </IDENTIFIER>
+                      <typeArguments id="173">
+                        <LT id="char_literal183">
+                          <TOKEN id="char_literal183" startline="53" startpos="12" endline="53" endpos="13">&lt;</TOKEN>
+                        </LT>
+                        <typeArgument id="184">
+                          <IDENTIFIER id="IDENTIFIER172">
+                            <TOKEN id="IDENTIFIER172" startline="53" startpos="13" endline="53" endpos="24">PullRequest</TOKEN>
+                          </IDENTIFIER>
+                        </typeArgument>
+                        <GT id="char_literal187">
+                          <TOKEN id="char_literal187" startline="53" startpos="24" endline="53" endpos="25">&gt;</TOKEN>
+                        </GT>
+                      </typeArguments>
+                    </classOrInterfaceType>
+                  </type>
+                  <variableDeclarator id="282">
+                    <IDENTIFIER id="IDENTIFIER139">
+                      <TOKEN id="IDENTIFIER139" startline="53" startpos="26" endline="53" endpos="38">pullRequests</TOKEN>
+                    </IDENTIFIER>
+                    <EQ id="char_literal142">
+                      <TOKEN id="char_literal142" startline="53" startpos="39" endline="53" endpos="40">=</TOKEN>
+                    </EQ>
+                    <variableInitializer id="143">
+                      <primary id="501">
+                        <IDENTIFIER id="IDENTIFIER517">
+                          <TOKEN id="IDENTIFIER517" startline="53" startpos="41" endline="53" endpos="59">pullRequestService</TOKEN>
+                        </IDENTIFIER>
+                        <DOT id="char_literal518">
+                          <TOKEN id="char_literal518" startline="53" startpos="59" endline="53" endpos="60">.</TOKEN>
+                        </DOT>
+                        <IDENTIFIER id="IDENTIFIER519">
+                          <TOKEN id="IDENTIFIER519" startline="53" startpos="60" endline="53" endpos="75">getPullRequests</TOKEN>
+                        </IDENTIFIER>
+                        <identifierSuffix id="520">
+                          <arguments id="545">
+                            <LPAREN id="char_literal626">
+                              <TOKEN id="char_literal626" startline="53" startpos="75" endline="53" endpos="76">(</TOKEN>
+                            </LPAREN>
+                            <expressionList id="627">
+                              <expression id="411">
+                                <primary id="501">
+                                  <IDENTIFIER id="IDENTIFIER517">
+                                    <TOKEN id="IDENTIFIER517" startline="53" startpos="76" endline="53" endpos="89">getRepository</TOKEN>
+                                  </IDENTIFIER>
+                                  <identifierSuffix id="520">
+                                    <arguments id="545">
+                                      <LPAREN id="char_literal626">
+                                        <TOKEN id="char_literal626" startline="53" startpos="89" endline="53" endpos="90">(</TOKEN>
+                                      </LPAREN>
+                                      <RPAREN id="char_literal628">
+                                        <TOKEN id="char_literal628" startline="53" startpos="90" endline="53" endpos="91">)</TOKEN>
+                                      </RPAREN>
+                                    </arguments>
+                                  </identifierSuffix>
+                                </primary>
+                              </expression>
+                              <COMMA id="char_literal412">
+                                <TOKEN id="char_literal412" startline="53" startpos="91" endline="53" endpos="92">,</TOKEN>
+                              </COMMA>
+                              <expression id="413">
+                                <StringLiteral id="set629">
+                                  <TOKEN id="set629" startline="53" startpos="93" endline="53" endpos="99">"open"</TOKEN>
+                                </StringLiteral>
+                              </expression>
+                            </expressionList>
+                            <RPAREN id="char_literal628">
+                              <TOKEN id="char_literal628" startline="53" startpos="99" endline="53" endpos="100">)</TOKEN>
+                            </RPAREN>
+                          </arguments>
+                        </identifierSuffix>
+                      </primary>
+                    </variableInitializer>
+                  </variableDeclarator>
+                </localVariableDeclaration>
+                <SEMI id="char_literal279">
+                  <TOKEN id="char_literal279" startline="53" startpos="100" endline="53" endpos="101">;</TOKEN>
+                </SEMI>
+              </localVariableDeclarationStatement>
+            </blockStatement>
+            <blockStatement id="119">
+              <statement id="277">
+                <IF id="string_literal292">
+                  <TOKEN id="string_literal292" startline="54" startpos="8" endline="54" endpos="10">if</TOKEN>
+                </IF>
+                <parExpression id="293">
+                  <LPAREN id="char_literal408">
+                    <TOKEN id="char_literal408" startline="54" startpos="11" endline="54" endpos="12">(</TOKEN>
+                  </LPAREN>
+                  <expression id="409">
+                    <relationalExpression id="459">
+                      <shiftExpression id="462">
+                        <primary id="501">
+                          <IDENTIFIER id="IDENTIFIER517">
+                            <TOKEN id="IDENTIFIER517" startline="54" startpos="12" endline="54" endpos="24">pullRequests</TOKEN>
+                          </IDENTIFIER>
+                          <DOT id="char_literal518">
+                            <TOKEN id="char_literal518" startline="54" startpos="24" endline="54" endpos="25">.</TOKEN>
+                          </DOT>
+                          <IDENTIFIER id="IDENTIFIER519">
+                            <TOKEN id="IDENTIFIER519" startline="54" startpos="25" endline="54" endpos="29">size</TOKEN>
+                          </IDENTIFIER>
+                          <identifierSuffix id="520">
+                            <arguments id="545">
+                              <LPAREN id="char_literal626">
+                                <TOKEN id="char_literal626" startline="54" startpos="29" endline="54" endpos="30">(</TOKEN>
+                              </LPAREN>
+                              <RPAREN id="char_literal628">
+                                <TOKEN id="char_literal628" startline="54" startpos="30" endline="54" endpos="31">)</TOKEN>
+                              </RPAREN>
+                            </arguments>
+                          </identifierSuffix>
+                        </primary>
+                      </shiftExpression>
+                      <relationalOp id="463">
+                        <GT id="char_literal470">
+                          <TOKEN id="char_literal470" startline="54" startpos="32" endline="54" endpos="33">&gt;</TOKEN>
+                        </GT>
+                      </relationalOp>
+                      <shiftExpression id="464">
+                        <IntegerLiteral id="set629">
+                          <TOKEN id="set629" startline="54" startpos="34" endline="54" endpos="35">0</TOKEN>
+                        </IntegerLiteral>
+                      </shiftExpression>
+                    </relationalExpression>
+                  </expression>
+                  <RPAREN id="char_literal410">
+                    <TOKEN id="char_literal410" startline="54" startpos="35" endline="54" endpos="36">)</TOKEN>
+                  </RPAREN>
+                </parExpression>
+                <statement id="294">
+                  <block id="285">
+                    <LBRACE id="char_literal272">
+                      <TOKEN id="char_literal272" startline="54" startpos="37" endline="54" endpos="38">{</TOKEN>
+                    </LBRACE>
+                    <blockStatement id="273">
+                      <statement id="277">
+                        <expression id="290">
+                          <conditionalExpression id="414">
+                            <IDENTIFIER id="IDENTIFIER517">
+                              <TOKEN id="IDENTIFIER517" startline="55" startpos="12" endline="55" endpos="31">lastOpenPullRequest</TOKEN>
+                            </IDENTIFIER>
+                          </conditionalExpression>
+                          <assignmentOperator id="415">
+                            <EQ id="char_literal417">
+                              <TOKEN id="char_literal417" startline="55" startpos="32" endline="55" endpos="33">=</TOKEN>
+                            </EQ>
+                          </assignmentOperator>
+                          <expression id="416">
+                            <unaryExpressionNotPlusMinus id="495">
+                              <primary id="501">
+                                <IDENTIFIER id="IDENTIFIER517">
+                                  <TOKEN id="IDENTIFIER517" startline="55" startpos="34" endline="55" endpos="46">pullRequests</TOKEN>
+                                </IDENTIFIER>
+                                <DOT id="char_literal518">
+                                  <TOKEN id="char_literal518" startline="55" startpos="46" endline="55" endpos="47">.</TOKEN>
+                                </DOT>
+                                <IDENTIFIER id="IDENTIFIER519">
+                                  <TOKEN id="IDENTIFIER519" startline="55" startpos="47" endline="55" endpos="50">get</TOKEN>
+                                </IDENTIFIER>
+                                <identifierSuffix id="520">
+                                  <arguments id="545">
+                                    <LPAREN id="char_literal626">
+                                      <TOKEN id="char_literal626" startline="55" startpos="50" endline="55" endpos="51">(</TOKEN>
+                                    </LPAREN>
+                                    <expressionList id="627">
+                                      <IntegerLiteral id="set629">
+                                        <TOKEN id="set629" startline="55" startpos="51" endline="55" endpos="52">0</TOKEN>
+                                      </IntegerLiteral>
+                                    </expressionList>
+                                    <RPAREN id="char_literal628">
+                                      <TOKEN id="char_literal628" startline="55" startpos="52" endline="55" endpos="53">)</TOKEN>
+                                    </RPAREN>
+                                  </arguments>
+                                </identifierSuffix>
+                              </primary>
+                              <selector id="502">
+                                <DOT id="char_literal558">
+                                  <TOKEN id="char_literal558" startline="55" startpos="53" endline="55" endpos="54">.</TOKEN>
+                                </DOT>
+                                <IDENTIFIER id="IDENTIFIER559">
+                                  <TOKEN id="IDENTIFIER559" startline="55" startpos="54" endline="55" endpos="63">getNumber</TOKEN>
+                                </IDENTIFIER>
+                                <arguments id="560">
+                                  <LPAREN id="char_literal626">
+                                    <TOKEN id="char_literal626" startline="55" startpos="63" endline="55" endpos="64">(</TOKEN>
+                                  </LPAREN>
+                                  <RPAREN id="char_literal628">
+                                    <TOKEN id="char_literal628" startline="55" startpos="64" endline="55" endpos="65">)</TOKEN>
+                                  </RPAREN>
+                                </arguments>
+                              </selector>
+                            </unaryExpressionNotPlusMinus>
+                          </expression>
+                        </expression>
+                        <SEMI id="char_literal291">
+                          <TOKEN id="char_literal291" startline="55" startpos="65" endline="55" endpos="66">;</TOKEN>
+                        </SEMI>
+                      </statement>
+                    </blockStatement>
+                    <RBRACE id="char_literal274">
+                      <TOKEN id="char_literal274" startline="56" startpos="8" endline="56" endpos="9">}</TOKEN>
+                    </RBRACE>
+                  </block>
+                </statement>
+              </statement>
+            </blockStatement>
+            <RBRACE id="char_literal120">
+              <TOKEN id="char_literal120" startline="57" startpos="4" endline="57" endpos="5">}</TOKEN>
+            </RBRACE>
+          </methodDeclaration>
+        </classBodyDeclaration>
+        <classBodyDeclaration id="98">
+          <methodDeclaration id="108">
+            <modifiers id="121">
+              <annotation id="29">
+                <MONKEYS_AT id="char_literal228">
+                  <TOKEN id="char_literal228" startline="59" startpos="4" endline="59" endpos="5">@</TOKEN>
+                </MONKEYS_AT>
+                <qualifiedName id="229">
+                  <IDENTIFIER id="IDENTIFIER224">
+                    <TOKEN id="IDENTIFIER224" startline="59" startpos="5" endline="59" endpos="13">Override</TOKEN>
+                  </IDENTIFIER>
+                </qualifiedName>
+              </annotation>
+              <PROTECTED id="string_literal31">
+                <TOKEN id="string_literal31" startline="60" startpos="4" endline="60" endpos="13">protected</TOKEN>
+              </PROTECTED>
+            </modifiers>
+            <type id="123">
+              <INT id="set182">
+                <TOKEN id="set182" startline="60" startpos="14" endline="60" endpos="17">int</TOKEN>
+              </INT>
+            </type>
+            <IDENTIFIER id="IDENTIFIER125">
+              <TOKEN id="IDENTIFIER125" startline="60" startpos="18" endline="60" endpos="22">poll</TOKEN>
+            </IDENTIFIER>
+            <formalParameters id="126">
+              <LPAREN id="char_literal195">
+                <TOKEN id="char_literal195" startline="60" startpos="22" endline="60" endpos="23">(</TOKEN>
+              </LPAREN>
+              <RPAREN id="char_literal197">
+                <TOKEN id="char_literal197" startline="60" startpos="23" endline="60" endpos="24">)</TOKEN>
+              </RPAREN>
+            </formalParameters>
+            <THROWS id="string_literal129">
+              <TOKEN id="string_literal129" startline="60" startpos="25" endline="60" endpos="31">throws</TOKEN>
+            </THROWS>
+            <qualifiedNameList id="130">
+              <IDENTIFIER id="IDENTIFIER224">
+                <TOKEN id="IDENTIFIER224" startline="60" startpos="32" endline="60" endpos="41">Exception</TOKEN>
+              </IDENTIFIER>
+            </qualifiedNameList>
+            <block id="131">
+              <LBRACE id="char_literal272">
+                <TOKEN id="char_literal272" startline="60" startpos="42" endline="60" endpos="43">{</TOKEN>
+              </LBRACE>
+              <blockStatement id="273">
+                <localVariableDeclarationStatement id="275">
+                  <localVariableDeclaration id="278">
+                    <variableModifiers id="280" />
+                    <type id="281">
+                      <classOrInterfaceType id="166">
+                        <IDENTIFIER id="IDENTIFIER172">
+                          <TOKEN id="IDENTIFIER172" startline="61" startpos="8" endline="61" endpos="12">List</TOKEN>
+                        </IDENTIFIER>
+                        <typeArguments id="173">
+                          <LT id="char_literal183">
+                            <TOKEN id="char_literal183" startline="61" startpos="12" endline="61" endpos="13">&lt;</TOKEN>
+                          </LT>
+                          <typeArgument id="184">
+                            <IDENTIFIER id="IDENTIFIER172">
+                              <TOKEN id="IDENTIFIER172" startline="61" startpos="13" endline="61" endpos="24">PullRequest</TOKEN>
+                            </IDENTIFIER>
+                          </typeArgument>
+                          <GT id="char_literal187">
+                            <TOKEN id="char_literal187" startline="61" startpos="24" endline="61" endpos="25">&gt;</TOKEN>
+                          </GT>
+                        </typeArguments>
+                      </classOrInterfaceType>
+                    </type>
+                    <variableDeclarator id="282">
+                      <IDENTIFIER id="IDENTIFIER139">
+                        <TOKEN id="IDENTIFIER139" startline="61" startpos="26" endline="61" endpos="42">openPullRequests</TOKEN>
+                      </IDENTIFIER>
+                      <EQ id="char_literal142">
+                        <TOKEN id="char_literal142" startline="61" startpos="43" endline="61" endpos="44">=</TOKEN>
+                      </EQ>
+                      <variableInitializer id="143">
+                        <primary id="501">
+                          <IDENTIFIER id="IDENTIFIER517">
+                            <TOKEN id="IDENTIFIER517" startline="61" startpos="45" endline="61" endpos="63">pullRequestService</TOKEN>
+                          </IDENTIFIER>
+                          <DOT id="char_literal518">
+                            <TOKEN id="char_literal518" startline="61" startpos="63" endline="61" endpos="64">.</TOKEN>
+                          </DOT>
+                          <IDENTIFIER id="IDENTIFIER519">
+                            <TOKEN id="IDENTIFIER519" startline="61" startpos="64" endline="61" endpos="79">getPullRequests</TOKEN>
+                          </IDENTIFIER>
+                          <identifierSuffix id="520">
+                            <arguments id="545">
+                              <LPAREN id="char_literal626">
+                                <TOKEN id="char_literal626" startline="61" startpos="79" endline="61" endpos="80">(</TOKEN>
+                              </LPAREN>
+                              <expressionList id="627">
+                                <expression id="411">
+                                  <primary id="501">
+                                    <IDENTIFIER id="IDENTIFIER517">
+                                      <TOKEN id="IDENTIFIER517" startline="61" startpos="80" endline="61" endpos="93">getRepository</TOKEN>
+                                    </IDENTIFIER>
+                                    <identifierSuffix id="520">
+                                      <arguments id="545">
+                                        <LPAREN id="char_literal626">
+                                          <TOKEN id="char_literal626" startline="61" startpos="93" endline="61" endpos="94">(</TOKEN>
+                                        </LPAREN>
+                                        <RPAREN id="char_literal628">
+                                          <TOKEN id="char_literal628" startline="61" startpos="94" endline="61" endpos="95">)</TOKEN>
+                                        </RPAREN>
+                                      </arguments>
+                                    </identifierSuffix>
+                                  </primary>
+                                </expression>
+                                <COMMA id="char_literal412">
+                                  <TOKEN id="char_literal412" startline="61" startpos="95" endline="61" endpos="96">,</TOKEN>
+                                </COMMA>
+                                <expression id="413">
+                                  <StringLiteral id="set629">
+                                    <TOKEN id="set629" startline="61" startpos="97" endline="61" endpos="103">"open"</TOKEN>
+                                  </StringLiteral>
+                                </expression>
+                              </expressionList>
+                              <RPAREN id="char_literal628">
+                                <TOKEN id="char_literal628" startline="61" startpos="103" endline="61" endpos="104">)</TOKEN>
+                              </RPAREN>
+                            </arguments>
+                          </identifierSuffix>
+                        </primary>
+                      </variableInitializer>
+                    </variableDeclarator>
+                  </localVariableDeclaration>
+                  <SEMI id="char_literal279">
+                    <TOKEN id="char_literal279" startline="61" startpos="104" endline="61" endpos="105">;</TOKEN>
+                  </SEMI>
+                </localVariableDeclarationStatement>
+              </blockStatement>
+              <blockStatement id="273">
+                <localVariableDeclarationStatement id="275">
+                  <localVariableDeclaration id="278">
+                    <variableModifiers id="280" />
+                    <type id="281">
+                      <classOrInterfaceType id="166">
+                        <IDENTIFIER id="IDENTIFIER172">
+                          <TOKEN id="IDENTIFIER172" startline="63" startpos="8" endline="63" endpos="13">Stack</TOKEN>
+                        </IDENTIFIER>
+                        <typeArguments id="173">
+                          <LT id="char_literal183">
+                            <TOKEN id="char_literal183" startline="63" startpos="13" endline="63" endpos="14">&lt;</TOKEN>
+                          </LT>
+                          <typeArgument id="184">
+                            <IDENTIFIER id="IDENTIFIER172">
+                              <TOKEN id="IDENTIFIER172" startline="63" startpos="14" endline="63" endpos="25">PullRequest</TOKEN>
+                            </IDENTIFIER>
+                          </typeArgument>
+                          <GT id="char_literal187">
+                            <TOKEN id="char_literal187" startline="63" startpos="25" endline="63" endpos="26">&gt;</TOKEN>
+                          </GT>
+                        </typeArguments>
+                      </classOrInterfaceType>
+                    </type>
+                    <variableDeclarator id="282">
+                      <IDENTIFIER id="IDENTIFIER139">
+                        <TOKEN id="IDENTIFIER139" startline="63" startpos="27" endline="63" endpos="42">newPullRequests</TOKEN>
+                      </IDENTIFIER>
+                      <EQ id="char_literal142">
+                        <TOKEN id="char_literal142" startline="63" startpos="43" endline="63" endpos="44">=</TOKEN>
+                      </EQ>
+                      <variableInitializer id="143">
+                        <creator id="524">
+                          <NEW id="string_literal578">
+                            <TOKEN id="string_literal578" startline="63" startpos="45" endline="63" endpos="48">new</TOKEN>
+                          </NEW>
+                          <classOrInterfaceTypeWithDiamond id="579">
+                            <IDENTIFIER id="IDENTIFIER177">
+                              <TOKEN id="IDENTIFIER177" startline="63" startpos="49" endline="63" endpos="54">Stack</TOKEN>
+                            </IDENTIFIER>
+                            <typeArgumentsOrDiamond id="178">
+                              <typeArguments id="622">
+                                <LT id="char_literal183">
+                                  <TOKEN id="char_literal183" startline="63" startpos="54" endline="63" endpos="55">&lt;</TOKEN>
+                                </LT>
+                                <typeArgument id="184">
+                                  <IDENTIFIER id="IDENTIFIER172">
+                                    <TOKEN id="IDENTIFIER172" startline="63" startpos="55" endline="63" endpos="66">PullRequest</TOKEN>
+                                  </IDENTIFIER>
+                                </typeArgument>
+                                <GT id="char_literal187">
+                                  <TOKEN id="char_literal187" startline="63" startpos="66" endline="63" endpos="67">&gt;</TOKEN>
+                                </GT>
+                              </typeArguments>
+                            </typeArgumentsOrDiamond>
+                          </classOrInterfaceTypeWithDiamond>
+                          <classCreatorRest id="580">
+                            <arguments id="615">
+                              <LPAREN id="char_literal626">
+                                <TOKEN id="char_literal626" startline="63" startpos="67" endline="63" endpos="68">(</TOKEN>
+                              </LPAREN>
+                              <RPAREN id="char_literal628">
+                                <TOKEN id="char_literal628" startline="63" startpos="68" endline="63" endpos="69">)</TOKEN>
+                              </RPAREN>
+                            </arguments>
+                          </classCreatorRest>
+                        </creator>
+                      </variableInitializer>
+                    </variableDeclarator>
+                  </localVariableDeclaration>
+                  <SEMI id="char_literal279">
+                    <TOKEN id="char_literal279" startline="63" startpos="69" endline="63" endpos="70">;</TOKEN>
+                  </SEMI>
+                </localVariableDeclarationStatement>
+              </blockStatement>
+              <blockStatement id="273">
+                <forstatement id="315">
+                  <FOR id="string_literal388">
+                    <TOKEN id="string_literal388" startline="64" startpos="8" endline="64" endpos="11">for</TOKEN>
+                  </FOR>
+                  <LPAREN id="char_literal389">
+                    <TOKEN id="char_literal389" startline="64" startpos="12" endline="64" endpos="13">(</TOKEN>
+                  </LPAREN>
+                  <variableModifiers id="390" />
+                  <type id="391">
+                    <IDENTIFIER id="IDENTIFIER172">
+                      <TOKEN id="IDENTIFIER172" startline="64" startpos="13" endline="64" endpos="24">PullRequest</TOKEN>
+                    </IDENTIFIER>
+                  </type>
+                  <IDENTIFIER id="IDENTIFIER392">
+                    <TOKEN id="IDENTIFIER392" startline="64" startpos="25" endline="64" endpos="36">pullRequest</TOKEN>
+                  </IDENTIFIER>
+                  <COLON id="char_literal393">
+                    <TOKEN id="char_literal393" startline="64" startpos="37" endline="64" endpos="38">:</TOKEN>
+                  </COLON>
+                  <expression id="394">
+                    <IDENTIFIER id="IDENTIFIER517">
+                      <TOKEN id="IDENTIFIER517" startline="64" startpos="39" endline="64" endpos="55">openPullRequests</TOKEN>
+                    </IDENTIFIER>
+                  </expression>
+                  <RPAREN id="char_literal395">
+                    <TOKEN id="char_literal395" startline="64" startpos="55" endline="64" endpos="56">)</TOKEN>
+                  </RPAREN>
+                  <statement id="396">
+                    <block id="285">
+                      <LBRACE id="char_literal272">
+                        <TOKEN id="char_literal272" startline="64" startpos="57" endline="64" endpos="58">{</TOKEN>
+                      </LBRACE>
+                      <blockStatement id="273">
+                        <statement id="277">
+                          <IF id="string_literal292">
+                            <TOKEN id="string_literal292" startline="65" startpos="12" endline="65" endpos="14">if</TOKEN>
+                          </IF>
+                          <parExpression id="293">
+                            <LPAREN id="char_literal408">
+                              <TOKEN id="char_literal408" startline="65" startpos="15" endline="65" endpos="16">(</TOKEN>
+                            </LPAREN>
+                            <expression id="409">
+                              <relationalExpression id="459">
+                                <shiftExpression id="462">
+                                  <primary id="501">
+                                    <IDENTIFIER id="IDENTIFIER517">
+                                      <TOKEN id="IDENTIFIER517" startline="65" startpos="16" endline="65" endpos="27">pullRequest</TOKEN>
+                                    </IDENTIFIER>
+                                    <DOT id="char_literal518">
+                                      <TOKEN id="char_literal518" startline="65" startpos="27" endline="65" endpos="28">.</TOKEN>
+                                    </DOT>
+                                    <IDENTIFIER id="IDENTIFIER519">
+                                      <TOKEN id="IDENTIFIER519" startline="65" startpos="28" endline="65" endpos="37">getNumber</TOKEN>
+                                    </IDENTIFIER>
+                                    <identifierSuffix id="520">
+                                      <arguments id="545">
+                                        <LPAREN id="char_literal626">
+                                          <TOKEN id="char_literal626" startline="65" startpos="37" endline="65" endpos="38">(</TOKEN>
+                                        </LPAREN>
+                                        <RPAREN id="char_literal628">
+                                          <TOKEN id="char_literal628" startline="65" startpos="38" endline="65" endpos="39">)</TOKEN>
+                                        </RPAREN>
+                                      </arguments>
+                                    </identifierSuffix>
+                                  </primary>
+                                </shiftExpression>
+                                <relationalOp id="463">
+                                  <GT id="char_literal470">
+                                    <TOKEN id="char_literal470" startline="65" startpos="40" endline="65" endpos="41">&gt;</TOKEN>
+                                  </GT>
+                                </relationalOp>
+                                <shiftExpression id="464">
+                                  <IDENTIFIER id="IDENTIFIER517">
+                                    <TOKEN id="IDENTIFIER517" startline="65" startpos="42" endline="65" endpos="61">lastOpenPullRequest</TOKEN>
+                                  </IDENTIFIER>
+                                </shiftExpression>
+                              </relationalExpression>
+                            </expression>
+                            <RPAREN id="char_literal410">
+                              <TOKEN id="char_literal410" startline="65" startpos="61" endline="65" endpos="62">)</TOKEN>
+                            </RPAREN>
+                          </parExpression>
+                          <statement id="294">
+                            <block id="285">
+                              <LBRACE id="char_literal272">
+                                <TOKEN id="char_literal272" startline="65" startpos="63" endline="65" endpos="64">{</TOKEN>
+                              </LBRACE>
+                              <blockStatement id="273">
+                                <statement id="277">
+                                  <expression id="290">
+                                    <primary id="501">
+                                      <IDENTIFIER id="IDENTIFIER517">
+                                        <TOKEN id="IDENTIFIER517" startline="66" startpos="16" endline="66" endpos="31">newPullRequests</TOKEN>
+                                      </IDENTIFIER>
+                                      <DOT id="char_literal518">
+                                        <TOKEN id="char_literal518" startline="66" startpos="31" endline="66" endpos="32">.</TOKEN>
+                                      </DOT>
+                                      <IDENTIFIER id="IDENTIFIER519">
+                                        <TOKEN id="IDENTIFIER519" startline="66" startpos="32" endline="66" endpos="36">push</TOKEN>
+                                      </IDENTIFIER>
+                                      <identifierSuffix id="520">
+                                        <arguments id="545">
+                                          <LPAREN id="char_literal626">
+                                            <TOKEN id="char_literal626" startline="66" startpos="36" endline="66" endpos="37">(</TOKEN>
+                                          </LPAREN>
+                                          <expressionList id="627">
+                                            <IDENTIFIER id="IDENTIFIER517">
+                                              <TOKEN id="IDENTIFIER517" startline="66" startpos="37" endline="66" endpos="48">pullRequest</TOKEN>
+                                            </IDENTIFIER>
+                                          </expressionList>
+                                          <RPAREN id="char_literal628">
+                                            <TOKEN id="char_literal628" startline="66" startpos="48" endline="66" endpos="49">)</TOKEN>
+                                          </RPAREN>
+                                        </arguments>
+                                      </identifierSuffix>
+                                    </primary>
+                                  </expression>
+                                  <SEMI id="char_literal291">
+                                    <TOKEN id="char_literal291" startline="66" startpos="49" endline="66" endpos="50">;</TOKEN>
+                                  </SEMI>
+                                </statement>
+                              </blockStatement>
+                              <RBRACE id="char_literal274">
+                                <TOKEN id="char_literal274" startline="67" startpos="12" endline="67" endpos="13">}</TOKEN>
+                              </RBRACE>
+                            </block>
+                          </statement>
+                          <ELSE id="string_literal295">
+                            <TOKEN id="string_literal295" startline="67" startpos="14" endline="67" endpos="18">else</TOKEN>
+                          </ELSE>
+                          <statement id="296">
+                            <block id="285">
+                              <LBRACE id="char_literal272">
+                                <TOKEN id="char_literal272" startline="67" startpos="19" endline="67" endpos="20">{</TOKEN>
+                              </LBRACE>
+                              <blockStatement id="273">
+                                <statement id="277">
+                                  <BREAK id="string_literal316">
+                                    <TOKEN id="string_literal316" startline="68" startpos="16" endline="68" endpos="21">break</TOKEN>
+                                  </BREAK>
+                                  <SEMI id="char_literal318">
+                                    <TOKEN id="char_literal318" startline="68" startpos="21" endline="68" endpos="22">;</TOKEN>
+                                  </SEMI>
+                                </statement>
+                              </blockStatement>
+                              <RBRACE id="char_literal274">
+                                <TOKEN id="char_literal274" startline="69" startpos="12" endline="69" endpos="13">}</TOKEN>
+                              </RBRACE>
+                            </block>
+                          </statement>
+                        </statement>
+                      </blockStatement>
+                      <RBRACE id="char_literal274">
+                        <TOKEN id="char_literal274" startline="70" startpos="8" endline="70" endpos="9">}</TOKEN>
+                      </RBRACE>
+                    </block>
+                  </statement>
+                </forstatement>
+              </blockStatement>
+              <blockStatement id="273">
+                <statement id="277">
+                  <IF id="string_literal292">
+                    <TOKEN id="string_literal292" startline="72" startpos="8" endline="72" endpos="10">if</TOKEN>
+                  </IF>
+                  <parExpression id="293">
+                    <LPAREN id="char_literal408">
+                      <TOKEN id="char_literal408" startline="72" startpos="11" endline="72" endpos="12">(</TOKEN>
+                    </LPAREN>
+                    <expression id="409">
+                      <relationalExpression id="459">
+                        <shiftExpression id="462">
+                          <primary id="501">
+                            <IDENTIFIER id="IDENTIFIER517">
+                              <TOKEN id="IDENTIFIER517" startline="72" startpos="12" endline="72" endpos="27">newPullRequests</TOKEN>
+                            </IDENTIFIER>
+                            <DOT id="char_literal518">
+                              <TOKEN id="char_literal518" startline="72" startpos="27" endline="72" endpos="28">.</TOKEN>
+                            </DOT>
+                            <IDENTIFIER id="IDENTIFIER519">
+                              <TOKEN id="IDENTIFIER519" startline="72" startpos="28" endline="72" endpos="32">size</TOKEN>
+                            </IDENTIFIER>
+                            <identifierSuffix id="520">
+                              <arguments id="545">
+                                <LPAREN id="char_literal626">
+                                  <TOKEN id="char_literal626" startline="72" startpos="32" endline="72" endpos="33">(</TOKEN>
+                                </LPAREN>
+                                <RPAREN id="char_literal628">
+                                  <TOKEN id="char_literal628" startline="72" startpos="33" endline="72" endpos="34">)</TOKEN>
+                                </RPAREN>
+                              </arguments>
+                            </identifierSuffix>
+                          </primary>
+                        </shiftExpression>
+                        <relationalOp id="463">
+                          <GT id="char_literal470">
+                            <TOKEN id="char_literal470" startline="72" startpos="35" endline="72" endpos="36">&gt;</TOKEN>
+                          </GT>
+                        </relationalOp>
+                        <shiftExpression id="464">
+                          <IntegerLiteral id="set629">
+                            <TOKEN id="set629" startline="72" startpos="37" endline="72" endpos="38">0</TOKEN>
+                          </IntegerLiteral>
+                        </shiftExpression>
+                      </relationalExpression>
+                    </expression>
+                    <RPAREN id="char_literal410">
+                      <TOKEN id="char_literal410" startline="72" startpos="38" endline="72" endpos="39">)</TOKEN>
+                    </RPAREN>
+                  </parExpression>
+                  <statement id="294">
+                    <block id="285">
+                      <LBRACE id="char_literal272">
+                        <TOKEN id="char_literal272" startline="72" startpos="40" endline="72" endpos="41">{</TOKEN>
+                      </LBRACE>
+                      <blockStatement id="273">
+                        <statement id="277">
+                          <expression id="290">
+                            <conditionalExpression id="414">
+                              <IDENTIFIER id="IDENTIFIER517">
+                                <TOKEN id="IDENTIFIER517" startline="73" startpos="12" endline="73" endpos="31">lastOpenPullRequest</TOKEN>
+                              </IDENTIFIER>
+                            </conditionalExpression>
+                            <assignmentOperator id="415">
+                              <EQ id="char_literal417">
+                                <TOKEN id="char_literal417" startline="73" startpos="32" endline="73" endpos="33">=</TOKEN>
+                              </EQ>
+                            </assignmentOperator>
+                            <expression id="416">
+                              <unaryExpressionNotPlusMinus id="495">
+                                <primary id="501">
+                                  <IDENTIFIER id="IDENTIFIER517">
+                                    <TOKEN id="IDENTIFIER517" startline="73" startpos="34" endline="73" endpos="50">openPullRequests</TOKEN>
+                                  </IDENTIFIER>
+                                  <DOT id="char_literal518">
+                                    <TOKEN id="char_literal518" startline="73" startpos="50" endline="73" endpos="51">.</TOKEN>
+                                  </DOT>
+                                  <IDENTIFIER id="IDENTIFIER519">
+                                    <TOKEN id="IDENTIFIER519" startline="73" startpos="51" endline="73" endpos="54">get</TOKEN>
+                                  </IDENTIFIER>
+                                  <identifierSuffix id="520">
+                                    <arguments id="545">
+                                      <LPAREN id="char_literal626">
+                                        <TOKEN id="char_literal626" startline="73" startpos="54" endline="73" endpos="55">(</TOKEN>
+                                      </LPAREN>
+                                      <expressionList id="627">
+                                        <IntegerLiteral id="set629">
+                                          <TOKEN id="set629" startline="73" startpos="55" endline="73" endpos="56">0</TOKEN>
+                                        </IntegerLiteral>
+                                      </expressionList>
+                                      <RPAREN id="char_literal628">
+                                        <TOKEN id="char_literal628" startline="73" startpos="56" endline="73" endpos="57">)</TOKEN>
+                                      </RPAREN>
+                                    </arguments>
+                                  </identifierSuffix>
+                                </primary>
+                                <selector id="502">
+                                  <DOT id="char_literal558">
+                                    <TOKEN id="char_literal558" startline="73" startpos="57" endline="73" endpos="58">.</TOKEN>
+                                  </DOT>
+                                  <IDENTIFIER id="IDENTIFIER559">
+                                    <TOKEN id="IDENTIFIER559" startline="73" startpos="58" endline="73" endpos="67">getNumber</TOKEN>
+                                  </IDENTIFIER>
+                                  <arguments id="560">
+                                    <LPAREN id="char_literal626">
+                                      <TOKEN id="char_literal626" startline="73" startpos="67" endline="73" endpos="68">(</TOKEN>
+                                    </LPAREN>
+                                    <RPAREN id="char_literal628">
+                                      <TOKEN id="char_literal628" startline="73" startpos="68" endline="73" endpos="69">)</TOKEN>
+                                    </RPAREN>
+                                  </arguments>
+                                </selector>
+                              </unaryExpressionNotPlusMinus>
+                            </expression>
+                          </expression>
+                          <SEMI id="char_literal291">
+                            <TOKEN id="char_literal291" startline="73" startpos="69" endline="73" endpos="70">;</TOKEN>
+                          </SEMI>
+                        </statement>
+                      </blockStatement>
+                      <RBRACE id="char_literal274">
+                        <TOKEN id="char_literal274" startline="74" startpos="8" endline="74" endpos="9">}</TOKEN>
+                      </RBRACE>
+                    </block>
+                  </statement>
+                </statement>
+              </blockStatement>
+              <blockStatement id="273">
+                <statement id="277">
+                  <WHILE id="string_literal307">
+                    <TOKEN id="string_literal307" startline="76" startpos="8" endline="76" endpos="13">while</TOKEN>
+                  </WHILE>
+                  <parExpression id="308">
+                    <LPAREN id="char_literal408">
+                      <TOKEN id="char_literal408" startline="76" startpos="14" endline="76" endpos="15">(</TOKEN>
+                    </LPAREN>
+                    <expression id="409">
+                      <unaryExpressionNotPlusMinus id="495">
+                        <BANG id="char_literal498">
+                          <TOKEN id="char_literal498" startline="76" startpos="15" endline="76" endpos="16">!</TOKEN>
+                        </BANG>
+                        <unaryExpression id="499">
+                          <primary id="501">
+                            <IDENTIFIER id="IDENTIFIER517">
+                              <TOKEN id="IDENTIFIER517" startline="76" startpos="16" endline="76" endpos="31">newPullRequests</TOKEN>
+                            </IDENTIFIER>
+                            <DOT id="char_literal518">
+                              <TOKEN id="char_literal518" startline="76" startpos="31" endline="76" endpos="32">.</TOKEN>
+                            </DOT>
+                            <IDENTIFIER id="IDENTIFIER519">
+                              <TOKEN id="IDENTIFIER519" startline="76" startpos="32" endline="76" endpos="37">empty</TOKEN>
+                            </IDENTIFIER>
+                            <identifierSuffix id="520">
+                              <arguments id="545">
+                                <LPAREN id="char_literal626">
+                                  <TOKEN id="char_literal626" startline="76" startpos="37" endline="76" endpos="38">(</TOKEN>
+                                </LPAREN>
+                                <RPAREN id="char_literal628">
+                                  <TOKEN id="char_literal628" startline="76" startpos="38" endline="76" endpos="39">)</TOKEN>
+                                </RPAREN>
+                              </arguments>
+                            </identifierSuffix>
+                          </primary>
+                        </unaryExpression>
+                      </unaryExpressionNotPlusMinus>
+                    </expression>
+                    <RPAREN id="char_literal410">
+                      <TOKEN id="char_literal410" startline="76" startpos="39" endline="76" endpos="40">)</TOKEN>
+                    </RPAREN>
+                  </parExpression>
+                  <statement id="309">
+                    <block id="285">
+                      <LBRACE id="char_literal272">
+                        <TOKEN id="char_literal272" startline="76" startpos="41" endline="76" endpos="42">{</TOKEN>
+                      </LBRACE>
+                      <blockStatement id="273">
+                        <localVariableDeclarationStatement id="275">
+                          <localVariableDeclaration id="278">
+                            <variableModifiers id="280" />
+                            <type id="281">
+                              <IDENTIFIER id="IDENTIFIER172">
+                                <TOKEN id="IDENTIFIER172" startline="77" startpos="12" endline="77" endpos="23">PullRequest</TOKEN>
+                              </IDENTIFIER>
+                            </type>
+                            <variableDeclarator id="282">
+                              <IDENTIFIER id="IDENTIFIER139">
+                                <TOKEN id="IDENTIFIER139" startline="77" startpos="24" endline="77" endpos="38">newPullRequest</TOKEN>
+                              </IDENTIFIER>
+                              <EQ id="char_literal142">
+                                <TOKEN id="char_literal142" startline="77" startpos="39" endline="77" endpos="40">=</TOKEN>
+                              </EQ>
+                              <variableInitializer id="143">
+                                <primary id="501">
+                                  <IDENTIFIER id="IDENTIFIER517">
+                                    <TOKEN id="IDENTIFIER517" startline="77" startpos="41" endline="77" endpos="56">newPullRequests</TOKEN>
+                                  </IDENTIFIER>
+                                  <DOT id="char_literal518">
+                                    <TOKEN id="char_literal518" startline="77" startpos="56" endline="77" endpos="57">.</TOKEN>
+                                  </DOT>
+                                  <IDENTIFIER id="IDENTIFIER519">
+                                    <TOKEN id="IDENTIFIER519" startline="77" startpos="57" endline="77" endpos="60">pop</TOKEN>
+                                  </IDENTIFIER>
+                                  <identifierSuffix id="520">
+                                    <arguments id="545">
+                                      <LPAREN id="char_literal626">
+                                        <TOKEN id="char_literal626" startline="77" startpos="60" endline="77" endpos="61">(</TOKEN>
+                                      </LPAREN>
+                                      <RPAREN id="char_literal628">
+                                        <TOKEN id="char_literal628" startline="77" startpos="61" endline="77" endpos="62">)</TOKEN>
+                                      </RPAREN>
+                                    </arguments>
+                                  </identifierSuffix>
+                                </primary>
+                              </variableInitializer>
+                            </variableDeclarator>
+                          </localVariableDeclaration>
+                          <SEMI id="char_literal279">
+                            <TOKEN id="char_literal279" startline="77" startpos="62" endline="77" endpos="63">;</TOKEN>
+                          </SEMI>
+                        </localVariableDeclarationStatement>
+                      </blockStatement>
+                      <blockStatement id="273">
+                        <localVariableDeclarationStatement id="275">
+                          <localVariableDeclaration id="278">
+                            <variableModifiers id="280" />
+                            <type id="281">
+                              <IDENTIFIER id="IDENTIFIER172">
+                                <TOKEN id="IDENTIFIER172" startline="78" startpos="12" endline="78" endpos="20">Exchange</TOKEN>
+                              </IDENTIFIER>
+                            </type>
+                            <variableDeclarator id="282">
+                              <IDENTIFIER id="IDENTIFIER139">
+                                <TOKEN id="IDENTIFIER139" startline="78" startpos="21" endline="78" endpos="22">e</TOKEN>
+                              </IDENTIFIER>
+                              <EQ id="char_literal142">
+                                <TOKEN id="char_literal142" startline="78" startpos="23" endline="78" endpos="24">=</TOKEN>
+                              </EQ>
+                              <variableInitializer id="143">
+                                <unaryExpressionNotPlusMinus id="495">
+                                  <primary id="501">
+                                    <IDENTIFIER id="IDENTIFIER517">
+                                      <TOKEN id="IDENTIFIER517" startline="78" startpos="25" endline="78" endpos="36">getEndpoint</TOKEN>
+                                    </IDENTIFIER>
+                                    <identifierSuffix id="520">
+                                      <arguments id="545">
+                                        <LPAREN id="char_literal626">
+                                          <TOKEN id="char_literal626" startline="78" startpos="36" endline="78" endpos="37">(</TOKEN>
+                                        </LPAREN>
+                                        <RPAREN id="char_literal628">
+                                          <TOKEN id="char_literal628" startline="78" startpos="37" endline="78" endpos="38">)</TOKEN>
+                                        </RPAREN>
+                                      </arguments>
+                                    </identifierSuffix>
+                                  </primary>
+                                  <selector id="502">
+                                    <DOT id="char_literal558">
+                                      <TOKEN id="char_literal558" startline="78" startpos="38" endline="78" endpos="39">.</TOKEN>
+                                    </DOT>
+                                    <IDENTIFIER id="IDENTIFIER559">
+                                      <TOKEN id="IDENTIFIER559" startline="78" startpos="39" endline="78" endpos="53">createExchange</TOKEN>
+                                    </IDENTIFIER>
+                                    <arguments id="560">
+                                      <LPAREN id="char_literal626">
+                                        <TOKEN id="char_literal626" startline="78" startpos="53" endline="78" endpos="54">(</TOKEN>
+                                      </LPAREN>
+                                      <RPAREN id="char_literal628">
+                                        <TOKEN id="char_literal628" startline="78" startpos="54" endline="78" endpos="55">)</TOKEN>
+                                      </RPAREN>
+                                    </arguments>
+                                  </selector>
+                                </unaryExpressionNotPlusMinus>
+                              </variableInitializer>
+                            </variableDeclarator>
+                          </localVariableDeclaration>
+                          <SEMI id="char_literal279">
+                            <TOKEN id="char_literal279" startline="78" startpos="55" endline="78" endpos="56">;</TOKEN>
+                          </SEMI>
+                        </localVariableDeclarationStatement>
+                      </blockStatement>
+                      <blockStatement id="273">
+                        <statement id="277">
+                          <expression id="290">
+                            <unaryExpressionNotPlusMinus id="495">
+                              <primary id="501">
+                                <IDENTIFIER id="IDENTIFIER517">
+                                  <TOKEN id="IDENTIFIER517" startline="79" startpos="12" endline="79" endpos="13">e</TOKEN>
+                                </IDENTIFIER>
+                                <DOT id="char_literal518">
+                                  <TOKEN id="char_literal518" startline="79" startpos="13" endline="79" endpos="14">.</TOKEN>
+                                </DOT>
+                                <IDENTIFIER id="IDENTIFIER519">
+                                  <TOKEN id="IDENTIFIER519" startline="79" startpos="14" endline="79" endpos="19">getIn</TOKEN>
+                                </IDENTIFIER>
+                                <identifierSuffix id="520">
+                                  <arguments id="545">
+                                    <LPAREN id="char_literal626">
+                                      <TOKEN id="char_literal626" startline="79" startpos="19" endline="79" endpos="20">(</TOKEN>
+                                    </LPAREN>
+                                    <RPAREN id="char_literal628">
+                                      <TOKEN id="char_literal628" startline="79" startpos="20" endline="79" endpos="21">)</TOKEN>
+                                    </RPAREN>
+                                  </arguments>
+                                </identifierSuffix>
+                              </primary>
+                              <selector id="502">
+                                <DOT id="char_literal558">
+                                  <TOKEN id="char_literal558" startline="79" startpos="21" endline="79" endpos="22">.</TOKEN>
+                                </DOT>
+                                <IDENTIFIER id="IDENTIFIER559">
+                                  <TOKEN id="IDENTIFIER559" startline="79" startpos="22" endline="79" endpos="29">setBody</TOKEN>
+                                </IDENTIFIER>
+                                <arguments id="560">
+                                  <LPAREN id="char_literal626">
+                                    <TOKEN id="char_literal626" startline="79" startpos="29" endline="79" endpos="30">(</TOKEN>
+                                  </LPAREN>
+                                  <expressionList id="627">
+                                    <IDENTIFIER id="IDENTIFIER517">
+                                      <TOKEN id="IDENTIFIER517" startline="79" startpos="30" endline="79" endpos="44">newPullRequest</TOKEN>
+                                    </IDENTIFIER>
+                                  </expressionList>
+                                  <RPAREN id="char_literal628">
+                                    <TOKEN id="char_literal628" startline="79" startpos="44" endline="79" endpos="45">)</TOKEN>
+                                  </RPAREN>
+                                </arguments>
+                              </selector>
+                            </unaryExpressionNotPlusMinus>
+                          </expression>
+                          <SEMI id="char_literal291">
+                            <TOKEN id="char_literal291" startline="79" startpos="45" endline="79" endpos="46">;</TOKEN>
+                          </SEMI>
+                        </statement>
+                      </blockStatement>
+                      <blockStatement id="273">
+                        <statement id="277">
+                          <expression id="290">
+                            <unaryExpressionNotPlusMinus id="495">
+                              <primary id="501">
+                                <IDENTIFIER id="IDENTIFIER517">
+                                  <TOKEN id="IDENTIFIER517" startline="82" startpos="12" endline="82" endpos="13">e</TOKEN>
+                                </IDENTIFIER>
+                                <DOT id="char_literal518">
+                                  <TOKEN id="char_literal518" startline="82" startpos="13" endline="82" endpos="14">.</TOKEN>
+                                </DOT>
+                                <IDENTIFIER id="IDENTIFIER519">
+                                  <TOKEN id="IDENTIFIER519" startline="82" startpos="14" endline="82" endpos="19">getIn</TOKEN>
+                                </IDENTIFIER>
+                                <identifierSuffix id="520">
+                                  <arguments id="545">
+                                    <LPAREN id="char_literal626">
+                                      <TOKEN id="char_literal626" startline="82" startpos="19" endline="82" endpos="20">(</TOKEN>
+                                    </LPAREN>
+                                    <RPAREN id="char_literal628">
+                                      <TOKEN id="char_literal628" startline="82" startpos="20" endline="82" endpos="21">)</TOKEN>
+                                    </RPAREN>
+                                  </arguments>
+                                </identifierSuffix>
+                              </primary>
+                              <selector id="502">
+                                <DOT id="char_literal558">
+                                  <TOKEN id="char_literal558" startline="82" startpos="21" endline="82" endpos="22">.</TOKEN>
+                                </DOT>
+                                <IDENTIFIER id="IDENTIFIER559">
+                                  <TOKEN id="IDENTIFIER559" startline="82" startpos="22" endline="82" endpos="31">setHeader</TOKEN>
+                                </IDENTIFIER>
+                                <arguments id="560">
+                                  <LPAREN id="char_literal626">
+                                    <TOKEN id="char_literal626" startline="82" startpos="31" endline="82" endpos="32">(</TOKEN>
+                                  </LPAREN>
+                                  <expressionList id="627">
+                                    <expression id="411">
+                                      <StringLiteral id="set629">
+                                        <TOKEN id="set629" startline="82" startpos="32" endline="82" endpos="51">"GitHubPullRequest"</TOKEN>
+                                      </StringLiteral>
+                                    </expression>
+                                    <COMMA id="char_literal412">
+                                      <TOKEN id="char_literal412" startline="82" startpos="51" endline="82" endpos="52">,</TOKEN>
+                                    </COMMA>
+                                    <expression id="413">
+                                      <primary id="501">
+                                        <IDENTIFIER id="IDENTIFIER517">
+                                          <TOKEN id="IDENTIFIER517" startline="82" startpos="53" endline="82" endpos="67">newPullRequest</TOKEN>
+                                        </IDENTIFIER>
+                                        <DOT id="char_literal518">
+                                          <TOKEN id="char_literal518" startline="82" startpos="67" endline="82" endpos="68">.</TOKEN>
+                                        </DOT>
+                                        <IDENTIFIER id="IDENTIFIER519">
+                                          <TOKEN id="IDENTIFIER519" startline="82" startpos="68" endline="82" endpos="77">getNumber</TOKEN>
+                                        </IDENTIFIER>
+                                        <identifierSuffix id="520">
+                                          <arguments id="545">
+                                            <LPAREN id="char_literal626">
+                                              <TOKEN id="char_literal626" startline="82" startpos="77" endline="82" endpos="78">(</TOKEN>
+                                            </LPAREN>
+                                            <RPAREN id="char_literal628">
+                                              <TOKEN id="char_literal628" startline="82" startpos="78" endline="82" endpos="79">)</TOKEN>
+                                            </RPAREN>
+                                          </arguments>
+                                        </identifierSuffix>
+                                      </primary>
+                                    </expression>
+                                  </expressionList>
+                                  <RPAREN id="char_literal628">
+                                    <TOKEN id="char_literal628" startline="82" startpos="79" endline="82" endpos="80">)</TOKEN>
+                                  </RPAREN>
+                                </arguments>
+                              </selector>
+                            </unaryExpressionNotPlusMinus>
+                          </expression>
+                          <SEMI id="char_literal291">
+                            <TOKEN id="char_literal291" startline="82" startpos="80" endline="82" endpos="81">;</TOKEN>
+                          </SEMI>
+                        </statement>
+                      </blockStatement>
+                      <blockStatement id="273">
+                        <statement id="277">
+                          <expression id="290">
+                            <unaryExpressionNotPlusMinus id="495">
+                              <primary id="501">
+                                <IDENTIFIER id="IDENTIFIER517">
+                                  <TOKEN id="IDENTIFIER517" startline="84" startpos="12" endline="84" endpos="24">getProcessor</TOKEN>
+                                </IDENTIFIER>
+                                <identifierSuffix id="520">
+                                  <arguments id="545">
+                                    <LPAREN id="char_literal626">
+                                      <TOKEN id="char_literal626" startline="84" startpos="24" endline="84" endpos="25">(</TOKEN>
+                                    </LPAREN>
+                                    <RPAREN id="char_literal628">
+                                      <TOKEN id="char_literal628" startline="84" startpos="25" endline="84" endpos="26">)</TOKEN>
+                                    </RPAREN>
+                                  </arguments>
+                                </identifierSuffix>
+                              </primary>
+                              <selector id="502">
+                                <DOT id="char_literal558">
+                                  <TOKEN id="char_literal558" startline="84" startpos="26" endline="84" endpos="27">.</TOKEN>
+                                </DOT>
+                                <IDENTIFIER id="IDENTIFIER559">
+                                  <TOKEN id="IDENTIFIER559" startline="84" startpos="27" endline="84" endpos="34">process</TOKEN>
+                                </IDENTIFIER>
+                                <arguments id="560">
+                                  <LPAREN id="char_literal626">
+                                    <TOKEN id="char_literal626" startline="84" startpos="34" endline="84" endpos="35">(</TOKEN>
+                                  </LPAREN>
+                                  <expressionList id="627">
+                                    <IDENTIFIER id="IDENTIFIER517">
+                                      <TOKEN id="IDENTIFIER517" startline="84" startpos="35" endline="84" endpos="36">e</TOKEN>
+                                    </IDENTIFIER>
+                                  </expressionList>
+                                  <RPAREN id="char_literal628">
+                                    <TOKEN id="char_literal628" startline="84" startpos="36" endline="84" endpos="37">)</TOKEN>
+                                  </RPAREN>
+                                </arguments>
+                              </selector>
+                            </unaryExpressionNotPlusMinus>
+                          </expression>
+                          <SEMI id="char_literal291">
+                            <TOKEN id="char_literal291" startline="84" startpos="37" endline="84" endpos="38">;</TOKEN>
+                          </SEMI>
+                        </statement>
+                      </blockStatement>
+                      <RBRACE id="char_literal274">
+                        <TOKEN id="char_literal274" startline="85" startpos="8" endline="85" endpos="9">}</TOKEN>
+                      </RBRACE>
+                    </block>
+                  </statement>
+                </statement>
+              </blockStatement>
+              <blockStatement id="273">
+                <statement id="277">
+                  <RETURN id="string_literal322">
+                    <TOKEN id="string_literal322" startline="86" startpos="8" endline="86" endpos="14">return</TOKEN>
+                  </RETURN>
+                  <expression id="323">
+                    <primary id="501">
+                      <IDENTIFIER id="IDENTIFIER517">
+                        <TOKEN id="IDENTIFIER517" startline="86" startpos="15" endline="86" endpos="30">newPullRequests</TOKEN>
+                      </IDENTIFIER>
+                      <DOT id="char_literal518">
+                        <TOKEN id="char_literal518" startline="86" startpos="30" endline="86" endpos="31">.</TOKEN>
+                      </DOT>
+                      <IDENTIFIER id="IDENTIFIER519">
+                        <TOKEN id="IDENTIFIER519" startline="86" startpos="31" endline="86" endpos="35">size</TOKEN>
+                      </IDENTIFIER>
+                      <identifierSuffix id="520">
+                        <arguments id="545">
+                          <LPAREN id="char_literal626">
+                            <TOKEN id="char_literal626" startline="86" startpos="35" endline="86" endpos="36">(</TOKEN>
+                          </LPAREN>
+                          <RPAREN id="char_literal628">
+                            <TOKEN id="char_literal628" startline="86" startpos="36" endline="86" endpos="37">)</TOKEN>
+                          </RPAREN>
+                        </arguments>
+                      </identifierSuffix>
+                    </primary>
+                  </expression>
+                  <SEMI id="char_literal324">
+                    <TOKEN id="char_literal324" startline="86" startpos="37" endline="86" endpos="38">;</TOKEN>
+                  </SEMI>
+                </statement>
+              </blockStatement>
+              <RBRACE id="char_literal274">
+                <TOKEN id="char_literal274" startline="87" startpos="4" endline="87" endpos="5">}</TOKEN>
+              </RBRACE>
+            </block>
+          </methodDeclaration>
+        </classBodyDeclaration>
+        <RBRACE id="char_literal99">
+          <TOKEN id="char_literal99" startline="88" startpos="0" endline="88" endpos="1">}</TOKEN>
+        </RBRACE>
+      </classBody>
+    </normalClassDeclaration>
+  </typeDeclaration>
+  <EOF id="EOF">
+    <TOKEN id="EOF" startline="89" startpos="0" endline="89" endpos="0"></TOKEN>
+  </EOF>
+</compilationUnit>

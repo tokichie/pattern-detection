@@ -1,3 +1,5 @@
+package com.github.tokichie.pattern_detection;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,9 +13,9 @@ public class RepositoryCrawler {
             (new File("").getAbsolutePath().replace("pattern-detection", "camel")) + File.separator + "diff_root";
     private static List<File> filelist;
 
-    public static void Crawl() {
-        System.out.println(REPOPATH);
-        File dir = new File(REPOPATH);
+    public static void Crawl(String repopath) {
+        if (repopath.isEmpty()) repopath = REPOPATH;
+        File dir = new File(repopath);
         filelist = new ArrayList<File>();
         readDirectory(dir);
     }
@@ -29,7 +31,7 @@ public class RepositoryCrawler {
                 continue;
             } else if (file.isDirectory()) {
                 readDirectory(file);
-            } else if (file.isFile() && file.getName().endsWith(".java")) {
+            } else if (file.isFile() && (file.getName().endsWith(".java") || file.getName().endsWith(".xml"))) {
                 filelist.add(file);
             }
         }

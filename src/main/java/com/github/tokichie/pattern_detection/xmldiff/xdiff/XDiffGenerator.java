@@ -7,6 +7,7 @@ import java.util.Stack;
 
 import com.github.tokichie.pattern_detection.xmldiff.HtmlDiffGenerator;
 import com.github.tokichie.pattern_detection.xmldiff.HtmlFormatter;
+
 import org.cyberneko.html.parsers.DOMParser;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -46,6 +47,7 @@ public class XDiffGenerator extends HtmlDiffGenerator {
   }
 
   private class InstructionNodeExtractor {
+
     private Stack<Node> stack = new Stack<>();
     private StringBuilder builder = new StringBuilder();
 
@@ -85,7 +87,7 @@ public class XDiffGenerator extends HtmlDiffGenerator {
           String fromData = instruction.getData().split("\\s", 2)[1];
           if (operationTarget.equals("FROM")) {
             return type + ":[oldValue=" + fromData + ", newValue="
-                + elementToString(parent).replace(System.lineSeparator(), "") + "]";
+                   + elementToString(parent).replace(System.lineSeparator(), "") + "]";
           } else {
             //return type + " " + operationTarget + ":[oldValue=" + fromData + ", newValue="
             //    + parent.getAttribute(operationTarget) + "]";
@@ -103,14 +105,16 @@ public class XDiffGenerator extends HtmlDiffGenerator {
 
     private void buildNodeString(Node node, StringBuilder builder) {
       if (node.getNodeType() == Node.TEXT_NODE) {
-        if (node.getNodeValue().equals(System.lineSeparator())) return;
+        if (node.getNodeValue().equals(System.lineSeparator())) {
+          return;
+        }
 
         if (node.getParentNode().getParentNode().getNodeName().equals("IDENTIFIER")) {
-            builder.append("__IDENT__　");
+          builder.append("__IDENT__　");
         } else if (node.getParentNode().getParentNode().getNodeName().equals("STRINGLITERAL")) {
-            builder.append("__STRINGLITERAL__ ");
+          builder.append("__STRINGLITERAL__ ");
         } else {
-            builder.append(node.getNodeValue()).append(" ");
+          builder.append(node.getNodeValue()).append(" ");
         }
       } else if (node.getNodeType() == Node.ELEMENT_NODE) {
         //builder.append("<").append(node.getNodeName()).append(">");

@@ -2,7 +2,7 @@ package com.github.tokichie.pattern_detection.xmldiff.xdiff;
 
 /**
  * Copyright (c) 2001 - 2005 Yuan Wang. All rights reserved.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without modification, are permitted
  * provided that the following conditions are met: 1. Redistributions of source code must retain the
  * above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions
@@ -15,7 +15,7 @@ package com.github.tokichie.pattern_detection.xmldiff.xdiff;
  * conditions. For an executable file, complete source code means the source code for all modules it
  * contains. It does not include source code for modules or files that typically accompany the major
  * components of the operating system on which the executable file runs.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY YUAN WANG "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
  * BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * OR NON-INFRINGEMENT, ARE DISCLAIMED. IN NO EVENT SHALL YUAN WANG BE LIABLE FOR ANY DIRECT,
@@ -24,7 +24,7 @@ package com.github.tokichie.pattern_detection.xmldiff.xdiff;
  * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- * 
+ *
  */
 
 import java.io.Reader;
@@ -39,6 +39,7 @@ import org.xml.sax.helpers.DefaultHandler;
  * <code>XParser</code> parses an input XML document and constructs an <code>XTree</code>
  */
 class XParser extends DefaultHandler implements LexicalHandler {
+
   private static final String _PARSER_NAME = "org.apache.xerces.parsers.SAXParser";
   private static int _STACK_SIZE = 100;
 
@@ -75,7 +76,7 @@ class XParser extends DefaultHandler implements LexicalHandler {
 
   /**
    * Parse an XML document
-   * 
+   *
    * @param uri input XML document
    * @return the created XTree
    */
@@ -197,15 +198,20 @@ class XParser extends DefaultHandler implements LexicalHandler {
   }
 
   // Following functions are not implemented.
-  public void comment(char[] ch, int start, int length) {}
+  public void comment(char[] ch, int start, int length) {
+  }
 
-  public void startDTD(String name, String publicId, String systemId) {}
+  public void startDTD(String name, String publicId, String systemId) {
+  }
 
-  public void endDTD() {}
+  public void endDTD() {
+  }
 
-  public void startEntity(String name) {}
+  public void startEntity(String name) {
+  }
 
-  public void endEntity(String name) {}
+  public void endEntity(String name) {
+  }
 
   // End of lexical handler methods.
 }

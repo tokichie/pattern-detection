@@ -12,6 +12,7 @@ import java.nio.charset.Charset;
 import com.google.common.base.Charsets;
 
 public class LogFiles {
+
   private static final Charset charset = Charsets.UTF_8;
   private static String prefixFileName = "";
 
@@ -28,7 +29,7 @@ public class LogFiles {
       new File("log").mkdir();
       File file = createFile(suffixFileName);
       try (FileOutputStream stream = new FileOutputStream(file);
-          OutputStreamWriter writer = new OutputStreamWriter(stream, charset);) {
+           OutputStreamWriter writer = new OutputStreamWriter(stream, charset);) {
         writer.write(content);
       }
     } catch (IOException e) {
@@ -43,8 +44,8 @@ public class LogFiles {
         StringBuilder builder = new StringBuilder();
         String lineSeparator = System.lineSeparator();
         try (FileInputStream stream = new FileInputStream(file);
-            InputStreamReader writer = new InputStreamReader(stream, charset);
-            BufferedReader br = new BufferedReader(writer);) {
+             InputStreamReader writer = new InputStreamReader(stream, charset);
+             BufferedReader br = new BufferedReader(writer);) {
           String line;
           while ((line = br.readLine()) != null) {
             builder.append(line).append(lineSeparator);

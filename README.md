@@ -3,3 +3,7 @@ pattern-detection [![Build Status](https://secure.travis-ci.org/tokichie/pattern
 
 # Test
 1. ```mvn test```
+
+# Environment
+* IDE: IntelliJ IDEA
+* CodeStyle: [GoogleStyle](https://code.google.com/p/google-styleguide/source/browse/trunk/intellij-java-google-style.xml)

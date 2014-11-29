@@ -2,7 +2,7 @@ package com.github.tokichie.pattern_detection.xmldiff.xdiff;
 
 /**
  * Copyright (c) 2001 - 2005 Yuan Wang. All rights reserved.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without modification, are permitted
  * provided that the following conditions are met: 1. Redistributions of source code must retain the
  * above copyright notice, this list of conditions and the following disclaimer. 2. Redistributions
@@ -15,7 +15,7 @@ package com.github.tokichie.pattern_detection.xmldiff.xdiff;
  * conditions. For an executable file, complete source code means the source code for all modules it
  * contains. It does not include source code for modules or files that typically accompany the major
  * components of the operating system on which the executable file runs.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY YUAN WANG "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
  * BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
  * OR NON-INFRINGEMENT, ARE DISCLAIMED. IN NO EVENT SHALL YUAN WANG BE LIABLE FOR ANY DIRECT,
@@ -24,7 +24,7 @@ package com.github.tokichie.pattern_detection.xmldiff.xdiff;
  * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
  * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- * 
+ *
  */
 
 import java.util.Hashtable;
@@ -123,11 +123,12 @@ class XTree {
   }
 
   // Start -- methods for constructing a tree.
+
   /**
    * Add a new element to the tree.
-   * 
-   * @param pid parent id
-   * @param lsid left-side sibling id
+   *
+   * @param pid     parent id
+   * @param lsid    left-side sibling id
    * @param tagName element name
    * @return the element id in the tree.
    */
@@ -136,14 +137,15 @@ class XTree {
 
     int topid = _elementIndex / _botCap;
     int botid = _elementIndex % _botCap;
-    if (botid == 0)
+    if (botid == 0) {
       _expand(topid);
+    }
 
     // Check if we've already had the tag
     Integer tagID = (Integer) _tagNames.get(tagName);
-    if (tagID != null)
+    if (tagID != null) {
       _valueIndex[topid][botid] = tagID.intValue();
-    else {
+    } else {
       _tagIndex++;
       tagID = new Integer(_tagIndex);
       _value[0][_tagIndex] = tagName;
@@ -151,16 +153,18 @@ class XTree {
       _valueIndex[topid][botid] = _tagIndex;
     }
 
-    if (pid == NULL_NODE)
+    if (pid == NULL_NODE) {
       return _elementIndex;
+    }
 
     int ptopid = pid / _botCap;
     int pbotid = pid % _botCap;
     // parent-child relation or sibling-sibling relation
-    if (lsid == NULL_NODE)
+    if (lsid == NULL_NODE) {
       _firstChild[ptopid][pbotid] = _elementIndex;
-    else
+    } else {
       _nextSibling[lsid / _botCap][lsid % _botCap] = _elementIndex;
+    }
 
     // update children count
     _childrenCount[ptopid][pbotid]++;
@@ -170,25 +174,27 @@ class XTree {
 
   /**
    * Add a text node.
-   * 
-   * @param eid element id
-   * @param lsid the sibling id on the left
-   * @param text text value
+   *
+   * @param eid   element id
+   * @param lsid  the sibling id on the left
+   * @param text  text value
    * @param value hash value
    */
   public int addText(int eid, int lsid, String text, long value) {
     _elementIndex++;
     int topid = _elementIndex / _botCap;
     int botid = _elementIndex % _botCap;
-    if (botid == 0)
+    if (botid == 0) {
       _expand(topid);
+    }
 
     int etopid = eid / _botCap;
     int ebotid = eid % _botCap;
-    if (lsid == NULL_NODE)
+    if (lsid == NULL_NODE) {
       _firstChild[etopid][ebotid] = _elementIndex;
-    else
+    } else {
       _nextSibling[lsid / _botCap][lsid % _botCap] = _elementIndex;
+    }
 
     _childrenCount[etopid][ebotid]++;
     _hashValue[topid][botid] = value;
@@ -196,8 +202,9 @@ class XTree {
     _valueCount++;
     int vtopid = _valueCount / _botCap;
     int vbotid = _valueCount % _botCap;
-    if (vbotid == 0)
+    if (vbotid == 0) {
       _value[vtopid] = new String[_botCap];
+    }
 
     _value[vtopid][vbotid] = text;
     _valueIndex[topid][botid] = _valueCount;
@@ -207,17 +214,17 @@ class XTree {
 
   /**
    * Add an attribute.
-   * 
-   * @param eid element id
-   * @param lsid the sibling id on the left
-   * @param name attribute name
-   * @param value attribute value
+   *
+   * @param eid       element id
+   * @param lsid      the sibling id on the left
+   * @param name      attribute name
+   * @param value     attribute value
    * @param valuehash hash value of the value
-   * @param attrhash hash value of the entire attribute
+   * @param attrhash  hash value of the entire attribute
    * @return the element id of the attribute
    */
   public int addAttribute(int eid, int lsid, String name, String value, long valuehash,
-      long attrhash) {
+                          long attrhash) {
     // attribute name first.
     int aid = addElement(eid, lsid, name);
 
@@ -235,8 +242,8 @@ class XTree {
 
   /**
    * Add more information (hash value) to an element node.
-   * 
-   * @param eid element id
+   *
+   * @param eid   element id
    * @param value extra hash value
    */
   public void addHashValue(int eid, long value) {
@@ -246,8 +253,8 @@ class XTree {
   /**
    * Add a CDATA section (either a start or an end) to the CDATA hashtable, in which each entry
    * should have an even number of position slots.
-   * 
-   * @param eid The text node id
+   *
+   * @param eid      The text node id
    * @param position the section tag position
    */
   public void addCDATA(int eid, int position) {
@@ -266,17 +273,18 @@ class XTree {
 
   /**
    * Add matching information.
-   * 
-   * @param eid element id
+   *
+   * @param eid   element id
    * @param match ?match and matched element id
    */
   public void addMatching(int eid, int[] match) {
-    if (match[0] == NO_MATCH)
+    if (match[0] == NO_MATCH) {
       _matching[eid / _botCap][eid % _botCap] = NO_MATCH;
-    else if (match[0] == MATCH)
+    } else if (match[0] == MATCH) {
       _matching[eid / _botCap][eid % _botCap] = MATCH;
-    else
+    } else {
       _matching[eid / _botCap][eid % _botCap] = match[1] + 1;
+    }
   }
 
   // End -- methods for constructing a tree.
@@ -285,17 +293,17 @@ class XTree {
 
   /**
    * Get matching information.
-   * 
-   * @param eid element id
+   *
+   * @param eid   element id
    * @param match ?change and matched element id
    */
   public void getMatching(int eid, int[] match) {
     int mid = _matching[eid / _botCap][eid % _botCap];
-    if (mid == NO_MATCH)
+    if (mid == NO_MATCH) {
       match[0] = NO_MATCH;
-    else if (mid == MATCH)
+    } else if (mid == MATCH) {
       match[0] = MATCH;
-    else {
+    } else {
       match[0] = CHANGE;
       match[1] = mid - 1;
     }
@@ -310,7 +318,7 @@ class XTree {
 
   /**
    * Get the first child of a node.
-   * 
+   *
    * @param eid element id
    */
   public int getFirstChild(int eid) {
@@ -318,10 +326,11 @@ class XTree {
     while (cid > _root) {
       int ctopid = cid / _botCap;
       int cbotid = cid % _botCap;
-      if (_isAttribute[ctopid][cbotid])
+      if (_isAttribute[ctopid][cbotid]) {
         cid = _nextSibling[ctopid][cbotid];
-      else
+      } else {
         return cid;
+      }
     }
 
     return NULL_NODE;
@@ -329,7 +338,7 @@ class XTree {
 
   /**
    * Get the next sibling of a node.
-   * 
+   *
    * @param eid element id
    */
   public int getNextSibling(int eid) {
@@ -338,47 +347,50 @@ class XTree {
 
   /**
    * Get the first attribute of a node.
-   * 
+   *
    * @param eid element id
    */
   public int getFirstAttribute(int eid) {
     int aid = _firstChild[eid / _botCap][eid % _botCap];
-    if ((aid > _root) && (_isAttribute[aid / _botCap][aid % _botCap]))
+    if ((aid > _root) && (_isAttribute[aid / _botCap][aid % _botCap])) {
       return aid;
-    else
+    } else {
       return NULL_NODE;
+    }
   }
 
   /**
    * Get the next attribute of a node.
-   * 
+   *
    * @param aid attribute id
    */
   public int getNextAttribute(int aid) {
     int aid1 = _nextSibling[aid / _botCap][aid % _botCap];
-    if ((aid1 > _root) && (_isAttribute[aid1 / _botCap][aid1 % _botCap]))
+    if ((aid1 > _root) && (_isAttribute[aid1 / _botCap][aid1 % _botCap])) {
       return aid1;
-    else
+    } else {
       return NULL_NODE;
+    }
   }
 
   /**
    * Get the attribute value.
-   * 
+   *
    * @param aid attribute id
    */
   public String getAttributeValue(int aid) {
     int cid = _firstChild[aid / _botCap][aid % _botCap];
     int index = _valueIndex[cid / _botCap][cid % _botCap];
-    if (index > 0)
+    if (index > 0) {
       return _value[index / _botCap][index % _botCap];
-    else
+    } else {
       return "";
+    }
   }
 
   /**
    * Get the hash value of a node.
-   * 
+   *
    * @param eid element id
    */
   public long getHashValue(int eid) {
@@ -387,7 +399,7 @@ class XTree {
 
   /**
    * Get the CDATA section position list of a text node.
-   * 
+   *
    * @param eid element id
    * @return position list which is a vector or null if no CDATA
    */
@@ -397,7 +409,7 @@ class XTree {
 
   /**
    * Get the childern count of a node.
-   * 
+   *
    * @param eid element id
    */
   public int getChildrenCount(int eid) {
@@ -406,15 +418,16 @@ class XTree {
 
   /**
    * Get the # of all decendents of a node.
-   * 
+   *
    * @param eid element id
    */
   public int getDecendentsCount(int eid) {
     int topid = eid / _botCap;
     int botid = eid % _botCap;
     int count = _childrenCount[topid][botid];
-    if (count == 0)
+    if (count == 0) {
       return 0;
+    }
 
     int cid = _firstChild[topid][botid];
     while (cid > NULL_NODE) {
@@ -427,7 +440,7 @@ class XTree {
 
   /**
    * Get the value index of a node
-   * 
+   *
    * @param eid element id
    */
   public int getValueIndex(int eid) {
@@ -436,7 +449,7 @@ class XTree {
 
   /**
    * Get the value of a leaf node
-   * 
+   *
    * @param index value index
    */
   public String getValue(int index) {
@@ -445,7 +458,7 @@ class XTree {
 
   /**
    * Get the tag of an element node
-   * 
+   *
    * @param eid element id
    */
   public String getTag(int eid) {
@@ -455,33 +468,35 @@ class XTree {
 
   /**
    * Get the text value of a leaf node
-   * 
+   *
    * @param eid element id
    */
   public String getText(int eid) {
     int index = _valueIndex[eid / _botCap][eid % _botCap];
-    if (index >= _botCap)
+    if (index >= _botCap) {
       return _value[index / _botCap][index % _botCap];
-    else
+    } else {
       return "";
+    }
   }
 
   /**
    * Check if a node an element node.
-   * 
+   *
    * @param eid element id
    */
   public boolean isElement(int eid) {
     int vindex = _valueIndex[eid / _botCap][eid % _botCap];
-    if (vindex < _botCap)
+    if (vindex < _botCap) {
       return true;
-    else
+    } else {
       return false;
+    }
   }
 
   /**
    * Check if a node is an attribute node.
-   * 
+   *
    * @param eid element id
    */
   public boolean isAttribute(int eid) {
@@ -490,15 +505,16 @@ class XTree {
 
   /**
    * Check if a node an leaf text node.
-   * 
+   *
    * @param edi element id
    */
   public boolean isLeaf(int eid) {
     int index = _valueIndex[eid / _botCap][eid % _botCap];
-    if (index < _botCap)
+    if (index < _botCap) {
       return false;
-    else
+    } else {
       return true;
+    }
   }
 
   // End -- methods for accessing a tree.
@@ -515,9 +531,10 @@ class XTree {
       int vtopid = vid / _botCap;
       int vbotid = vid % _botCap;
       System.out.println(i + "\t" + _firstChild[topid][botid] + "\t" + _nextSibling[topid][botid]
-          + "\t" + _isAttribute[topid][botid] + "\t" + _childrenCount[topid][botid] + "\t"
-          + _hashValue[topid][botid] + "\t" + _matching[topid][botid] + "\t"
-          + _value[vtopid][vbotid]);
+                         + "\t" + _isAttribute[topid][botid] + "\t" + _childrenCount[topid][botid]
+                         + "\t"
+                         + _hashValue[topid][botid] + "\t" + _matching[topid][botid] + "\t"
+                         + _value[vtopid][vbotid]);
     }
   }
 
@@ -529,8 +546,8 @@ class XTree {
     int vbotid = vid % _botCap;
     System.out
         .println(eid + "\t" + _firstChild[topid][botid] + "\t" + _nextSibling[topid][botid] + "\t"
-            + _isAttribute[topid][botid] + "\t" + _childrenCount[topid][botid] + "\t"
-            + _hashValue[topid][botid] + "\t" + _matching[topid][botid] + "\t"
-            + _value[vtopid][vbotid]);
+                 + _isAttribute[topid][botid] + "\t" + _childrenCount[topid][botid] + "\t"
+                 + _hashValue[topid][botid] + "\t" + _matching[topid][botid] + "\t"
+                 + _value[vtopid][vbotid]);
   }
 }

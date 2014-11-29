@@ -15,6 +15,7 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 public class HtmlFormatter {
+
   public static String lineFormat(String content) {
     String ret =
         content.replaceAll("\\s*<", "\n<").replaceAll(">\\s*", ">\n")

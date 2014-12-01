@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 
+import com.github.tokichie.pattern_detection.comparator.LcsComparator;
 import com.github.tokichie.pattern_detection.xmldiff.xdiff.XDiffGenerator;
 
 /**
@@ -106,6 +107,17 @@ public class Main {
             .readFileToString(new File(xml[1]));
         String diff = generator.generateDiffContent(original,
                                                     comparison, System.lineSeparator());
+
+        String[] lines = diff.split(System.lineSeparator());
+        String ref = lines[0];
+        List<Double> scoreList = new ArrayList<>();
+        for (int j = 1; j < lines.length; j++) {
+          String line = lines[j];
+          double score = LcsComparator.calculateSimilarity(ref, line);
+          scoreList.add(score);
+        }
+        System.out.println(scoreList.toString());
+
 
         File saveFile = new File(new File("").getAbsolutePath()
                                  + File.separator + "diffs" + File.separator + "diff"

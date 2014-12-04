@@ -24,6 +24,12 @@
     <orderEntry type="library" name="Maven: net.sourceforge.nekohtml:nekohtml:1.9.21" level="project" />
     <orderEntry type="library" name="Maven: xalan:serializer:2.7.2" level="project" />
     <orderEntry type="library" name="Maven: xalan:xalan:2.7.2" level="project" />
+    <orderEntry type="library" name="github-api-1.59" level="project" />
+    <orderEntry type="library" name="com.fasterxml.jackson.core:jackson-databind:2.4.4" level="project" />
+    <orderEntry type="library" name="com.infradna.tool:bridge-method-annotation:1.4" level="project" />
+    <orderEntry type="library" name="commons-codec:commons-codec:1.10" level="project" />
+    <orderEntry type="library" name="commons-lang:commons-lang:2.6" level="project" />
+    <orderEntry type="library" name="org.mockito:mockito-all:1.10.8" level="project" />
   </component>
 </module>
 

@@ -3,11 +3,7 @@ package com.github.tokichie.pattern_detection;
 
 import com.google.common.io.Resources;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationContext;
-import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import org.kohsuke.github.GHIssue;
 import org.kohsuke.github.GHIssueComment;

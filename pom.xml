@@ -44,6 +44,11 @@
             <artifactId>github-api</artifactId>
             <version>1.59</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.1</version>
+        </dependency>
 
         <!-- for test -->
         <dependency>

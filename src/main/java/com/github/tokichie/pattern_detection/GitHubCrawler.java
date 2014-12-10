@@ -6,17 +6,19 @@ import com.google.common.io.Resources;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import org.kohsuke.github.GHCommit;
 import org.kohsuke.github.GHIssue;
-import org.kohsuke.github.GHIssueComment;
 import org.kohsuke.github.GHIssueState;
 import org.kohsuke.github.GHPullRequest;
+import org.kohsuke.github.GHPullRequestCommitDetail;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
+import org.kohsuke.github.PagedIterable;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +30,8 @@ public class GitHubCrawler {
 
   public static void getIssueComments(File repositoryListCsv, int limit) {
     try {
+      //CSVParser csvParser = CSVParser.parse(repositoryListCsv, StandardCharsets.UTF_8,
+      //                                      CSVFormat.DEFAULT);
       Map<String, String> env = System.getenv();
       if (! (env.containsKey("login") && env.containsKey("token"))) {
         String authInfoJson =
@@ -42,12 +46,15 @@ public class GitHubCrawler {
       System.out.println(closedIssues.size() + " issues");
       for (GHIssue issue : closedIssues) {
         if (issue.getCommentsCount() > 0 && issue.getNumber() == 11) {
-          System.out.println("issue #" + issue.getNumber());
-          List<GHIssueComment> comments = issue.getComments();
-          for (GHIssueComment comment : comments) {
-            System.out.println("\t" + comment.getBody() + "\n");
+          GHPullRequest pullRequest = repo.getPullRequest(issue.getNumber());
+          PagedIterable<GHPullRequestCommitDetail> commitDetails = pullRequest.listCommits();
+          List<GHCommit> commits = new ArrayList<>();
+
+          for (GHPullRequestCommitDetail commit : commitDetails) {
+            commits.add(repo.getCommit(commit.getSha()));
           }
 
+          System.out.println(commits.get(0).getFiles().get(0).getPatch());
         }
       }
     } catch (IOException e) {

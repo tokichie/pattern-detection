@@ -5,15 +5,14 @@ import com.google.common.io.Resources;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.kohsuke.github.GHCommit;
-import org.kohsuke.github.GHIssue;
-import org.kohsuke.github.GHIssueState;
-import org.kohsuke.github.GHPullRequest;
-import org.kohsuke.github.GHPullRequestCommitDetail;
-import org.kohsuke.github.GHRepository;
-import org.kohsuke.github.GitHub;
-import org.kohsuke.github.PagedIterable;
+import com.jcabi.github.Coordinates;
+import com.jcabi.github.Github;
+import com.jcabi.github.Pull;
+import com.jcabi.github.PullComment;
+import com.jcabi.github.PullComments;
+import com.jcabi.github.Pulls;
+import com.jcabi.github.Repo;
+import com.jcabi.github.RtGithub;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,30 +32,34 @@ public class GitHubCrawler {
       //CSVParser csvParser = CSVParser.parse(repositoryListCsv, StandardCharsets.UTF_8,
       //                                      CSVFormat.DEFAULT);
       Map<String, String> env = System.getenv();
-      if (! (env.containsKey("login") && env.containsKey("token"))) {
+      if (! (env.containsKey("token"))) {
         String authInfoJson =
             Resources.toString(Resources.getResource("AuthInfo.json"), StandardCharsets.UTF_8);
         env = new ObjectMapper().readValue(authInfoJson, new TypeReference<HashMap<String, String>>(){});
       }
 
-      GitHub github = GitHub.connect(env.get("login"), env.get("token"));
-      GHRepository repo = github.getRepository("tokichie/pattern-detection");
-      List<GHIssue> closedIssues = repo.getIssues(GHIssueState.CLOSED);
+      Github github = new RtGithub(env.get("token"));
+      Repo repo = github.repos().get(new Coordinates.Simple("tokichie/pattern-detection"));
 
-      System.out.println(closedIssues.size() + " issues");
-      for (GHIssue issue : closedIssues) {
-        if (issue.getCommentsCount() > 0 && issue.getNumber() == 11) {
-          GHPullRequest pullRequest = repo.getPullRequest(issue.getNumber());
-          PagedIterable<GHPullRequestCommitDetail> commitDetails = pullRequest.listCommits();
-          List<GHCommit> commits = new ArrayList<>();
+      Pulls pulls = repo.pulls();
+      Map<String, String> params = new HashMap<>();
+      params.put("state", "close");
+      for (Pull pull : pulls.iterate(params)) {
+        PullComments comments = pull.comments();
+        List<String> commitShaList = new ArrayList<>();
 
-          for (GHPullRequestCommitDetail commit : commitDetails) {
-            commits.add(repo.getCommit(commit.getSha()));
-          }
+        for (PullComment comment : comments.iterate(new HashMap<String, String>())) {
+          PullComment.Smart smartComment = new PullComment.Smart(comment);
+          commitShaList.add(smartComment.json().getString("original_commit_id"));
+          System.out.println(smartComment.body());
 
-          System.out.println(commits.get(0).getFiles().get(0).getPatch());
+
         }
+
       }
+
+
+
     } catch (IOException e) {
       e.printStackTrace();
     }

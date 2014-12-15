@@ -13,9 +13,7 @@ import java.io.IOException;
 public class GitHubCrawlerTest {
   @Test
   public void test() {
-    //GitHubCrawler.getIssueComments(null, 0);
-    GitHubCrawler crawler = new GitHubCrawler(new File(Resources.getResource("java2.csv").getFile()));
-    //crawler.crawl(10);
-    crawler.crawl();
+    //GitHubCrawler crawler = new GitHubCrawler(new File(Resources.getResource("java2.csv").getFile()));
+    //crawler.crawl();
   }
 }

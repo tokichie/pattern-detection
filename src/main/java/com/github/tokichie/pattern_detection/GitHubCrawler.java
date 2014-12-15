@@ -8,10 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jcabi.github.Commit;
 import com.jcabi.github.Coordinates;
 import com.jcabi.github.Github;
-import com.jcabi.github.Limit;
 import com.jcabi.github.Pull;
-import com.jcabi.github.PullComment;
-import com.jcabi.github.PullComments;
 import com.jcabi.github.Pulls;
 import com.jcabi.github.Repo;
 import com.jcabi.github.RtGithub;
@@ -20,24 +17,19 @@ import com.jcabi.github.wire.CarefulWire;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
-import org.eclipse.jgit.api.Git;
 
-import java.beans.XMLDecoder;
-import java.beans.XMLEncoder;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
+
+import javax.json.JsonArray;
 
 /**
  * Created by tokitake on 2014/12/05.
@@ -45,17 +37,21 @@ import java.util.Map;
 public class GitHubCrawler {
 
   private String token;
-  private File repositoryListCsv;
   private Github github;
-  private int apiRemaining;
-  private Date apiResetDate;
+  private List<CSVRecord> csvRecords;
 
   public GitHubCrawler(File repositoryListCsv) {
     this(repositoryListCsv, null);
   }
 
   public GitHubCrawler(File repositoryListCsv, String token) {
-    this.repositoryListCsv = repositoryListCsv;
+    try {
+      CSVParser parser = CSVParser.parse(repositoryListCsv, StandardCharsets.UTF_8,
+                                         CSVFormat.DEFAULT.withHeader("url"));
+      this.csvRecords = parser.getRecords();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
 
     if (token == null) {
       this.token = getToken();
@@ -64,7 +60,7 @@ public class GitHubCrawler {
     }
 
     this.github = new RtGithub(
-        // this statement control api limit automatically.
+        // this statement controls api limit automatically.
         new RtGithub(this.token).entry().through(CarefulWire.class, 50)
     );
   }
@@ -93,25 +89,16 @@ public class GitHubCrawler {
 
   public void crawl(int limit) {
     if (limit != 0) limit++;
-    try {
-      List<RepositoryInfo> repoInfoList = this.getRepositoryInfoList(limit);
-      this.getRepositoryPullRequests(repoInfoList);
-      //this.serializeData(new FileOutputStream(new File("data/repoinfo.json")), repoInfoList);
-      this.serializeRepositoryInfoList(repoInfoList);
-      this.extractCommittedFiles(repoInfoList);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+    List<RepositoryInfo> repoInfoList = this.getRepositoryInfoList(limit);
+    this.getRepositoryPullRequests(repoInfoList);
+    this.extractCommittedFiles(repoInfoList);
   }
 
   private List<RepositoryInfo> getRepositoryInfoList(int limit) {
     List<RepositoryInfo> repoInfoList = new ArrayList<>();
 
     try {
-      CSVParser parser = CSVParser.parse(this.repositoryListCsv, StandardCharsets.UTF_8,
-                                            CSVFormat.DEFAULT.withHeader("url"));
-      List<CSVRecord> records = parser.getRecords();
-      ListIterator<CSVRecord> iterator = records.listIterator();
+      ListIterator<CSVRecord> iterator = csvRecords.listIterator();
       iterator.next();
 
       while (iterator.hasNext()) {
@@ -158,17 +145,19 @@ public class GitHubCrawler {
   private void getRepositoryPullRequests(List<RepositoryInfo> repoInfoList) {
     try {
       for (RepositoryInfo repoInfo : repoInfoList) {
-        this.checkApiLimit();
-        if (this.apiRemaining < 50) {
-          System.out.println("Cancelled: Remain of API access is lower than 50");
-          break;
-        }
-
         String repoIdentifier = repoInfo.getRepoIdentifier();
+        System.out.println("Fetching pulls of " + repoIdentifier);
+
+        File cachedJsonFile = new File("data/" + repoIdentifier + ".json");
+        if (cachedJsonFile.exists()) {
+          System.out.println("\tCache of pulls exists. loading...");
+          repoInfo = this.deserializeRepositoryInfo(cachedJsonFile);
+          continue;
+        }
         Repo repo = this.github.repos().get(new Coordinates.Simple(repoIdentifier));
 
-        System.out.println(repoIdentifier);
         repoInfo.setPullRequests(this.getPullRequests(repo.pulls()));
+        this.serializeRepositoryInfo(repoInfo);
       }
     } catch (Exception e) {
       e.printStackTrace();
@@ -176,7 +165,6 @@ public class GitHubCrawler {
   }
 
   private List<PullRequest> getPullRequests(Pulls pulls) {
-
     List<PullRequest> pullRequests = new ArrayList<>();
 
     try {
@@ -184,34 +172,35 @@ public class GitHubCrawler {
       pullParams.put("state", "closed");
 
       for (Pull pull : pulls.iterate(pullParams)) {
-        System.out.print("\tfetching pull #" + pull.number() + "... ");
-        checkApiLimit();
+        System.out.print("\tFetching pull #" + pull.number() + "... ");
 
         List<String> commitShaList = new ArrayList<>();
         Iterator<Commit> commits = pull.commits().iterator();
-        while (commits.hasNext()) {
-          String sha = commits.next().sha();
-          System.out.print(sha + " ");
-          commitShaList.add(sha);
-        }
-
-        if (commitShaList.size() < 2) {
+        if (! commits.hasNext()) {
           System.out.println("skipped.");
           continue;
+        }
+
+        Commit firstCommit = commits.next();
+        JsonArray parents = firstCommit.json().getJsonArray("parents");
+        if (parents.isEmpty()) {
+          System.out.println("skipped.");
+          continue;
+        }
+
+        String parentSha = parents.getJsonObject(0).getString("sha");
+        commitShaList.add(parentSha);
+        commitShaList.add(firstCommit.sha());
+
+        while (commits.hasNext()) {
+          String sha = commits.next().sha();
+          commitShaList.add(sha);
         }
 
         /**
          * when using body of comments for mining, I will uncomment this.
          *
-        PullComments comments = pull.comments();
-
-        for (PullComment comment : comments.iterate(new HashMap<String, String>())) {
-          PullComment.Smart smartComment = new PullComment.Smart(comment);
-          String originalCommitId = smartComment.json().getString("original_commit_id");
-          if (!commitShaList.contains(originalCommitId)) {
-            commitShaList.add(originalCommitId);
-          }
-        }
+        this.getPullRequestComments();
         */
 
         pullRequests.add(new PullRequest(commitShaList, pull.number()));
@@ -227,8 +216,8 @@ public class GitHubCrawler {
   private void extractCommittedFiles(List<RepositoryInfo> repoInfoList) {
     for (RepositoryInfo repoInfo : repoInfoList) {
       String repoIdentifier = repoInfo.getRepoIdentifier();
-
       List<PullRequest> pullRequests = repoInfo.getPullRequests();
+
       for (PullRequest pullRequest : pullRequests) {
         List<String> commits = pullRequest.getCommits();
         int commitCount = commits.size();
@@ -240,7 +229,7 @@ public class GitHubCrawler {
     }
   }
 
-  public void getDiffArchive(String repoIdentifier, String olderCommitId, String newerCommitId) {
+  private void getDiffArchive(String repoIdentifier, String olderCommitId, String newerCommitId) {
     String command =
         new File("git_archive.sh").getAbsolutePath() + " "
         + repoIdentifier + " "
@@ -256,29 +245,34 @@ public class GitHubCrawler {
     }
   }
 
-  private void checkApiLimit() {
-    try {
-      Limit.Smart apiLimit = new Limit.Smart(this.github.limits().get("core"));
-      this.apiRemaining = apiLimit.remaining();
-      this.apiResetDate = apiLimit.reset();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
+  /**
+   * when using body of comments for mining, I will uncomment this.
+   *
+  private void getPullRequestComments() {
+    PullComments comments = pull.comments();
 
-  private void serializeRepositoryInfoList(List<RepositoryInfo> repoInfoList) throws IOException{
+    for (PullComment comment : comments.iterate(new HashMap<String, String>())) {
+      PullComment.Smart smartComment = new PullComment.Smart(comment);
+      String originalCommitId = smartComment.json().getString("original_commit_id");
+      if (!commitShaList.contains(originalCommitId)) {
+        commitShaList.add(originalCommitId);
+      }
+    }
+
+  }
+  */
+
+  private void serializeRepositoryInfo(RepositoryInfo repoInfo) throws IOException{
     ObjectMapper mapper = new ObjectMapper();
-    for (RepositoryInfo repoInfo : repoInfoList) {
-      String repoIdentifier = repoInfo.getRepoIdentifier();
-      File dir = new File("data/" + repoIdentifier.substring(0, repoIdentifier.indexOf('/')));
-      if (!dir.exists()) dir.mkdir();
+    String repoIdentifier = repoInfo.getRepoIdentifier();
+    File dir = new File("data/" + repoIdentifier.substring(0, repoIdentifier.indexOf('/')));
+    if (!dir.exists()) dir.mkdir();
 
-      File outputFile = new File("data/" + repoIdentifier + ".json");
-      mapper.writeValue(new FileOutputStream(outputFile), repoInfo);
-    }
+    File outputFile = new File("data/" + repoIdentifier + ".json");
+    mapper.writeValue(new FileOutputStream(outputFile), repoInfo);
   }
 
-  private Object deserializeRepositoryInfo(File inputFile) throws IOException {
+  private RepositoryInfo deserializeRepositoryInfo(File inputFile) throws IOException {
     ObjectMapper mapper = new ObjectMapper();
     RepositoryInfo repoInfo = mapper.readValue(inputFile, RepositoryInfo.class);
     return repoInfo;

@@ -1,5 +1,8 @@
 package com.github.tokichie.pattern_detection;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +15,9 @@ public class RepositoryInfo {
   private File gitDirectory;
   private List<PullRequest> pullRequests;
 
-  public RepositoryInfo(String repoIdentifier, File gitDirectory) {
+  @JsonCreator
+  public RepositoryInfo(@JsonProperty("repoIdentifier") String repoIdentifier,
+                        @JsonProperty("gitDirectory") File gitDirectory) {
     this.repoIdentifier = repoIdentifier;
     this.gitDirectory = gitDirectory;
     this.pullRequests = new ArrayList<>();

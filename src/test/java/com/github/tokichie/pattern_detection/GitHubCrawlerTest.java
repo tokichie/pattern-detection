@@ -5,6 +5,7 @@ import com.google.common.io.Resources;
 import org.junit.Test;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by tokitake on 2014/12/05.
@@ -13,7 +14,8 @@ public class GitHubCrawlerTest {
   @Test
   public void test() {
     //GitHubCrawler.getIssueComments(null, 0);
-    GitHubCrawler crawler = new GitHubCrawler(new File(Resources.getResource("java.csv").getFile()));
-    crawler.crawl(10);
+    GitHubCrawler crawler = new GitHubCrawler(new File(Resources.getResource("java2.csv").getFile()));
+    //crawler.crawl(10);
+    crawler.crawl();
   }
 }

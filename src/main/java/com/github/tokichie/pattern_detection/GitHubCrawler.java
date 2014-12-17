@@ -144,14 +144,15 @@ public class GitHubCrawler {
 
   private void getRepositoryPullRequests(List<RepositoryInfo> repoInfoList) {
     try {
-      for (RepositoryInfo repoInfo : repoInfoList) {
+      for (int i = 0; i < repoInfoList.size(); i++) {
+        RepositoryInfo repoInfo = repoInfoList.get(i);
         String repoIdentifier = repoInfo.getRepoIdentifier();
         System.out.println("Fetching pulls of " + repoIdentifier);
 
         File cachedJsonFile = new File("data/" + repoIdentifier + ".json");
         if (cachedJsonFile.exists()) {
           System.out.println("\tCache of pulls exists. loading...");
-          repoInfo = this.deserializeRepositoryInfo(cachedJsonFile);
+          repoInfoList.set(i, this.deserializeRepositoryInfo(cachedJsonFile));
           continue;
         }
         Repo repo = this.github.repos().get(new Coordinates.Simple(repoIdentifier));
@@ -217,24 +218,31 @@ public class GitHubCrawler {
     for (RepositoryInfo repoInfo : repoInfoList) {
       String repoIdentifier = repoInfo.getRepoIdentifier();
       List<PullRequest> pullRequests = repoInfo.getPullRequests();
+      System.out.println("Extracting files of " + repoIdentifier + "...");
 
       for (PullRequest pullRequest : pullRequests) {
         List<String> commits = pullRequest.getCommits();
         int commitCount = commits.size();
 
         for (int i = 0; i < commitCount - 1; i++) {
-          this.getDiffArchive(repoIdentifier, commits.get(i), commits.get(i + 1));
+          this.getDiffArchive(
+              repoIdentifier,
+              commits.get(i),
+              commits.get(i + 1),
+              pullRequest.getNumber());
         }
       }
     }
   }
 
-  private void getDiffArchive(String repoIdentifier, String olderCommitId, String newerCommitId) {
+  private void getDiffArchive(
+      String repoIdentifier, String olderCommitId, String newerCommitId, int commitNumber) {
     String command =
         new File("git_archive.sh").getAbsolutePath() + " "
         + repoIdentifier + " "
         + olderCommitId.substring(0, 6) + " "
-        + newerCommitId.substring(0, 6);
+        + newerCommitId.substring(0, 6) + " "
+        + commitNumber;
 
     try {
       Process process = Runtime.getRuntime().exec(command);

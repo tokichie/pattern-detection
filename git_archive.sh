@@ -8,11 +8,11 @@ fi
 
 cd repos/$1
 java_files=`git diff --name-only $2 $3 | grep "\.java"`
-if [ -n "$java_files"  -a ! -e diffs/$2-$3 ]; then
-    git archive --format=zip --prefix=diffs/$4/older $2 $java_files -o archive_older.zip
-    git archive --format=zip --prefix=diffs/$4/newer $3 $java_files -o archive_newer.zip
+if [ -n "$java_files"  -a ! -e diffs/$4 ]; then
+    git archive --format=zip --prefix=diffs/$4/older/ $2 $java_files -o archive_older.zip
     unzip archive_older.zip > /dev/null
+    #rm -f archive_older.zip
+    git archive --format=zip --prefix=diffs/$4/newer/ $3 $java_files -o archive_newer.zip
     unzip archive_newer.zip > /dev/null
-    rm -f archive_older.zip
-    rm -f archive_newer.zip
+    #rm -f archive_newer.zip
 fi

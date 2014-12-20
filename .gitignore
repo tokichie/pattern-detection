@@ -19,3 +19,6 @@ log/
 diffs/
 xmls/
 .DS_Store
+AuthInfo.json
+repos/*/
+data/*/

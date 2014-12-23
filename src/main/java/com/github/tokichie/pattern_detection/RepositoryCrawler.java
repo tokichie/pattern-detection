@@ -8,38 +8,30 @@ import java.util.List;
  * Created by tokitake on 2014/10/02.
  */
 public class RepositoryCrawler {
+  private String dirPath;
 
-  private static final String REPOPATH =
-      (new File("").getAbsolutePath().replace("pattern-detection", "camel")) + File.separator
-      + "diff_root";
-  private static List<File> filelist;
-
-  public static void Crawl(String repopath) {
-    if (repopath.isEmpty()) {
-      repopath = REPOPATH;
-    }
-    File dir = new File(repopath);
-    filelist = new ArrayList<File>();
-    readDirectory(dir);
+  public RepositoryCrawler(String dirPath) {
+    this.dirPath = dirPath;
   }
 
-  public static List<File> getFilelist() {
-    return filelist;
+  public List<File> crawl() {
+    List<File> files = new ArrayList<>();
+    File dir = new File(this.dirPath);
+    readDirectory(dir, files);
+
+    return files;
   }
 
-  private static void readDirectory(File dir) {
-    List<File> files = java.util.Arrays.asList(dir.listFiles());
-    for (File file : files) {
+  private void readDirectory(File dir, List<File> files) {
+    File[] dirFiles = dir.listFiles();
+    for (File file : dirFiles) {
       if (!file.exists()) {
         continue;
       } else if (file.isDirectory()) {
-        readDirectory(file);
-      } else if (file.isFile() && (file.getName().endsWith(".java") || file.getName()
-          .endsWith(".xml"))) {
-        filelist.add(file);
+        readDirectory(file, files);
+      } else if (file.isFile() && (file.getName().endsWith(".java"))) {
+        files.add(file);
       }
     }
   }
-
-
 }

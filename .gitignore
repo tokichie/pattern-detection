@@ -22,3 +22,5 @@ xmls/
 AuthInfo.json
 repos/*/
 data/*/
+tmp/*.xml
+

@@ -85,13 +85,18 @@ public class GitHubCrawler {
     return "";
   }
 
-  public void crawl() { this.crawl(0); }
+  public List<RepositoryInfo> crawl() {
+    List<RepositoryInfo> repoInfoList = this.crawl(0);
+    return repoInfoList;
+  }
 
-  public void crawl(int limit) {
+  public List<RepositoryInfo> crawl(int limit) {
     if (limit != 0) limit++;
     List<RepositoryInfo> repoInfoList = this.getRepositoryInfoList(limit);
     this.getRepositoryPullRequests(repoInfoList);
     this.extractCommittedFiles(repoInfoList);
+
+    return repoInfoList;
   }
 
   private List<RepositoryInfo> getRepositoryInfoList(int limit) {

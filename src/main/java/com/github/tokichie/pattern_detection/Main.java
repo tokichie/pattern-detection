@@ -26,8 +26,8 @@ public class Main {
 
     if (false && new File(new File("").getAbsolutePath().replace(
         "pattern-detection", "camel")).exists()) {
-      RepositoryCrawler.Crawl("");
-      List<File> files = RepositoryCrawler.getFilelist();
+      //RepositoryCrawler.Crawl("");
+      List<File> files = new ArrayList<>();//RepositoryCrawler.getFilelist();
       HashMap<String, String> fileMap = new HashMap<>();
       System.out.println(files.size());
 
@@ -78,9 +78,9 @@ public class Main {
         }
       }
     } else {
-      RepositoryCrawler.Crawl(new File("").getAbsolutePath()
-                              + File.separator + "template-xmls");
-      Object[] files = RepositoryCrawler.getFilelist().toArray();
+      //RepositoryCrawler.Crawl(new File("").getAbsolutePath()
+                              //+ File.separator + "template-xmls");
+      Object[] files = null;//RepositoryCrawler.getFilelist().toArray();
       Arrays.sort(files, new Comparator<Object>() {
         @Override
         public int compare(Object o1, Object o2) {

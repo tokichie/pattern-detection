@@ -79,14 +79,19 @@ public class XDiffGenerator extends HtmlDiffGenerator {
         case "INSERT":
         case "DELETE":
           if (operationTarget.equalsIgnoreCase(parent.getTagName())) {
-            return type + ":" + elementToString(parent).replace(System.lineSeparator(), "");
+            String res = elementToString(parent);
+            if (res.equals("")) {
+              return null;
+            } else {
+              return type + ":" + elementToString(parent).replace(System.lineSeparator(), "");
+            }
           } else {
             return type + " " + operationTarget + ":" + parent.getAttribute(operationTarget);
           }
         case "UPDATE":
           String fromData = instruction.getData().split("\\s", 2)[1];
           if (operationTarget.equals("FROM")) {
-            return type + ":[oldValue=" + fromData + ", newValue="
+            return type + ":[oldValue=" + fromData.replace("\n", "") + ", newValue="
                    + elementToString(parent).replace(System.lineSeparator(), "") + "]";
           } else {
             //return type + " " + operationTarget + ":[oldValue=" + fromData + ", newValue="
@@ -110,13 +115,16 @@ public class XDiffGenerator extends HtmlDiffGenerator {
         }
 
         if (node.getParentNode().getParentNode().getNodeName().equals("IDENTIFIER")) {
-          builder.append("__IDENT__　");
+          builder.append("_IDT_");
         } else if (node.getParentNode().getParentNode().getNodeName().equals("STRINGLITERAL")) {
-          builder.append("__STRINGLITERAL__ ");
+          builder.append("_STR_");
         } else {
-          builder.append(node.getNodeValue()).append(" ");
+          builder.append(node.getNodeValue());
         }
       } else if (node.getNodeType() == Node.ELEMENT_NODE) {
+        if (node.getNodeName().equals("WS")) {
+          return;
+        }
         //builder.append("<").append(node.getNodeName()).append(">");
         NodeList children = node.getChildNodes();
         for (int i = 0; i < children.getLength(); i++) {

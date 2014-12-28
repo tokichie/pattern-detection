@@ -2,10 +2,12 @@ package com.github.tokichie.pattern_detection;
 
 import com.github.tokichie.pattern_detection.xmldiff.xdiff.XDiffGenerator;
 
+import org.apache.bcel.classfile.Code;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,17 +30,19 @@ public class GitHubDiff {
                       + "/diffs/" + number + "/older";
         RepositoryCrawler crawler = new RepositoryCrawler(path);
         List<File> olderFiles = crawler.crawl();
+        List<CodeChange> codeChanges = new ArrayList<>();
 
         for (File olderFile : olderFiles) {
           File newerFile = new File(olderFile.getAbsolutePath().replace("older", "newer"));
           if (newerFile.exists()) {
             if (this.executeCode2Xml(olderFile, newerFile)) {
               System.out.println(pullRequest.getNumber() + ": " + olderFile.getName());
-              this.takeXmlDiff();
+              this.takeXmlDiff(codeChanges);
             }
           }
         }
-        System.out.println();
+
+
       }
     } catch (Exception e) {
       e.printStackTrace();
@@ -63,7 +67,7 @@ public class GitHubDiff {
     return true;
   }
 
-  private void takeXmlDiff() {
+  private void takeXmlDiff(List<CodeChange> codeChanges) {
     try {
       XDiffGenerator generator = new XDiffGenerator();
       String diff = generator.generateDiffContent(
@@ -71,6 +75,16 @@ public class GitHubDiff {
           FileUtils.readFileToString(new File("tmp/newer.xml")),
           System.lineSeparator());
       System.out.println(diff);
+
+      if (diff.length() < 8) return;
+      String type = diff.substring(0, 6);
+      if (type.equals("UPDATE")) {
+        FileUtils.writeStringToFile(new File("tmp/updates.txt"), diff, true);
+      } else {
+        String content = diff.substring(7);
+        CodeChange codeChange = new CodeChange(CodeChange.toChangeType(type), content);
+        codeChanges.add(codeChange);
+      }
     } catch (IOException e) {
       e.printStackTrace();
     }

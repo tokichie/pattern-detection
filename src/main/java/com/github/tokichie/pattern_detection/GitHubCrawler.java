@@ -243,7 +243,7 @@ public class GitHubCrawler {
   private void getDiffArchive(
       String repoIdentifier, String olderCommitId, String newerCommitId, int commitNumber) {
     String command =
-        new File("git_archive.sh").getAbsolutePath() + " "
+        new File("git_diff.sh").getAbsolutePath() + " "
         + repoIdentifier + " "
         + olderCommitId.substring(0, 6) + " "
         + newerCommitId.substring(0, 6) + " "
@@ -252,7 +252,6 @@ public class GitHubCrawler {
     try {
       Process process = Runtime.getRuntime().exec(command);
       process.waitFor();
-      if (process.exitValue() != 0) throw new Exception();
     } catch (Exception e) {
       e.printStackTrace();
     }

@@ -1,5 +1,8 @@
 package com.github.tokichie.pattern_detection;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 import java.util.Map;
 
@@ -14,11 +17,18 @@ public class CodeChange {
   }
 
   private ChangeType changeType;
-  private List<String> changeSequence;
-  private Map<String, Integer> changeSet;
+  private String changeContent;
+  //private List<String> changeSequence;
+  //private Map<String, Integer> changeSet;
 
-  public CodeChange(ChangeType changeType, List<String> changeSequence) {
+  @JsonCreator
+  public CodeChange(@JsonProperty("changeType") ChangeType changeType,
+                    @JsonProperty("changeContent") String changeContent) {
     this.changeType = changeType;
-    this.changeSequence = changeSequence;
+    this.changeContent = changeContent;
+  }
+
+  public static ChangeType toChangeType(String type) {
+    return ChangeType.valueOf(type);
   }
 }

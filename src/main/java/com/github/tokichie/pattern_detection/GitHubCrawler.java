@@ -94,7 +94,7 @@ public class GitHubCrawler {
     if (limit != 0) limit++;
     List<RepositoryInfo> repoInfoList = this.getRepositoryInfoList(limit);
     this.getRepositoryPullRequests(repoInfoList);
-    this.extractCommittedFiles(repoInfoList);
+   // this.extractCommittedFiles(repoInfoList);
 
     return repoInfoList;
   }

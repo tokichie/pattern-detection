@@ -29,7 +29,7 @@ public class RepositoryCrawler {
         continue;
       } else if (file.isDirectory()) {
         readDirectory(file, files);
-      } else if (file.isFile() && (file.getName().endsWith(".java"))) {
+      } else if (file.isFile() && (file.getName().endsWith(".diff"))) {
         files.add(file);
       }
     }

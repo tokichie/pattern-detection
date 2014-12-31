@@ -5,7 +5,7 @@ package com.github.tokichie.pattern_detection.comparator;
  */
 public class LcsComparator {
 
-  public static double calculateSimilarity(String ref, String cmp) {
+  public float calculateSimilarity(String ref, String cmp) {
     int n = ref.length();
     int m = cmp.length();
     int[][] dp = new int[n + 1][m + 1];
@@ -20,6 +20,6 @@ public class LcsComparator {
       }
     }
 
-    return (double) dp[n][m] / n;
+    return (float) dp[n][m] / n;
   }
 }

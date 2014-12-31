@@ -29,7 +29,7 @@ public class GitHubDiff {
         String path = this.repoInfo.getGitDirectory().getAbsolutePath()
                       + "/diffs/" + number + "/older";
         RepositoryCrawler crawler = new RepositoryCrawler(path);
-        List<File> olderFiles = crawler.crawl();
+        List<File> olderFiles = crawler.crawl(".java");
         List<CodeChange> codeChanges = new ArrayList<>();
 
         for (File olderFile : olderFiles) {

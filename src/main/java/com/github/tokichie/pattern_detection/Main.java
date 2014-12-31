@@ -111,9 +111,10 @@ public class Main {
         String[] lines = diff.split(System.lineSeparator());
         String ref = lines[0];
         List<Double> scoreList = new ArrayList<>();
+        LcsComparator comparator = new LcsComparator();
         for (int j = 1; j < lines.length; j++) {
           String line = lines[j];
-          double score = LcsComparator.calculateSimilarity(ref, line);
+          double score = comparator.calculateSimilarity(ref, line);
           scoreList.add(score);
         }
         System.out.println(scoreList.toString());

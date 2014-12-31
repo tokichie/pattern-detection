@@ -14,22 +14,22 @@ public class RepositoryCrawler {
     this.dirPath = dirPath;
   }
 
-  public List<File> crawl() {
+  public List<File> crawl(String suffix) {
     List<File> files = new ArrayList<>();
     File dir = new File(this.dirPath);
-    readDirectory(dir, files);
+    readDirectory(dir, files, suffix);
 
     return files;
   }
 
-  private void readDirectory(File dir, List<File> files) {
+  private void readDirectory(File dir, List<File> files, String suffix) {
     File[] dirFiles = dir.listFiles();
     for (File file : dirFiles) {
       if (!file.exists()) {
         continue;
       } else if (file.isDirectory()) {
-        readDirectory(file, files);
-      } else if (file.isFile() && (file.getName().endsWith(".diff"))) {
+        readDirectory(file, files, suffix);
+      } else if (file.isFile() && (file.getName().endsWith(suffix))) {
         files.add(file);
       }
     }

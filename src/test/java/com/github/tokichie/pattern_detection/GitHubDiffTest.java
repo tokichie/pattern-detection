@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.tokichie.pattern_detection.comparator.Comparator;
 import com.github.tokichie.pattern_detection.comparator.LcsComparator;
+import com.github.tokichie.pattern_detection.comparator.TrigramComparator;
 
 import org.junit.Test;
 
@@ -14,7 +16,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by tokitake on 2014/12/31.
@@ -27,7 +31,7 @@ public class GitHubDiffTest {
 
     List<String> allDiffs = new ArrayList<>();
     addDiffsOfFile(diffFiles, allDiffs);
-    compare(allDiffs);
+    compareWithTrigram(allDiffs);
   }
 
   private void addDiffsOfFile(List<File> diffFiles, List<String> allDiffs) {
@@ -42,14 +46,44 @@ public class GitHubDiffTest {
     }
   }
 
-  private void compare(List<String> allDiffs) {
+  private void compareWithTrigram(List<String> allDiffs) {
+    int size = allDiffs.size();
+    Comparator comparator = new TrigramComparator();
+    Set<Long> exclusion = new HashSet<>();
+    int scoreCount = 0;
+    try {
+      PrintWriter writer = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File("tmp/scores_tri.txt"))));
+      for (int i = 0; i < size; i++) {
+        System.out.println("Comparing #" + i + "...");
+        String ref = allDiffs.get(i);
+        for (int j = i + 1; j < size; j++) {
+          if (exclusion.contains((long)(i+1)*(j+1))) continue;
+          float score = comparator.calculateSimilarity(ref, allDiffs.get(j));
+
+          if (score >= 0.75f) {
+            writer.print(i + "," + j + ",");
+            writer.printf("%.3f\n", score);
+            scoreCount++;
+            exclusion.add((long)(i+1)*(j+1));
+          }
+        }
+        System.out.println("\tSize of scores is " + scoreCount);
+      }
+      writer.close();
+      System.out.println("done.");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  private void compareWithLcs(List<String> allDiffs) {
     int size = allDiffs.size();
     //List<Score> scores = new ArrayList<>();
-    LcsComparator comparator = new LcsComparator();
+    Comparator comparator = new LcsComparator();
     int scoreCount = 0;
     try {
       PrintWriter writer = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File("tmp/scores.txt"))));
-      for (int i = 0; i < size; i++) {
+      for (int i = 174; i < size; i++) {
         System.out.println("Comparing #" + i + "...");
         String ref = allDiffs.get(i);
         for (int j = 0; j < size; j++) {

@@ -36,7 +36,7 @@ public class GitHubCrawlerTest {
           continue;
         }
         RepositoryCrawler crawler = new RepositoryCrawler(path);
-        List<File> diffFiles = crawler.crawl(".java");
+        List<File> diffFiles = crawler.crawl(".diff");
 
         System.out.println("Taking diff of " + repoInfo.getRepoIdentifier() + " pull #" + number);
         for (File diffFile : diffFiles) {

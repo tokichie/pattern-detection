@@ -3,7 +3,7 @@ package com.github.tokichie.pattern_detection.comparator;
 /**
  * Created by tokitake on 2014/11/29.
  */
-public class LcsComparator {
+public class LcsComparator implements Comparator{
 
   public float calculateSimilarity(String ref, String cmp) {
     int n = ref.length();
@@ -20,6 +20,8 @@ public class LcsComparator {
       }
     }
 
-    return (float) dp[n][m] / n;
+    float res = (float) dp[n][m] / n;
+
+    return res;
   }
 }

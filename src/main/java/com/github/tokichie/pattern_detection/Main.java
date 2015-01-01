@@ -1,18 +1,31 @@
 package com.github.tokichie.pattern_detection;
 
+import com.google.common.io.Resources;
+
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.commons.io.FileUtils;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.tokichie.pattern_detection.comparator.Comparator;
 import com.github.tokichie.pattern_detection.comparator.LcsComparator;
+import com.github.tokichie.pattern_detection.comparator.TrigramComparator;
+import com.github.tokichie.pattern_detection.xmldiff.DiffParser;
 import com.github.tokichie.pattern_detection.xmldiff.xdiff.XDiffGenerator;
 
 /**
@@ -21,116 +34,81 @@ import com.github.tokichie.pattern_detection.xmldiff.xdiff.XDiffGenerator;
 public class Main {
 
   public static void main(String args[]) {
-    int i = 1;
-    List<String[]> xmls = new ArrayList<>();
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    try {
+      System.out.println("Please specify operation.");
+      System.out.println("  [1] Crawling GitHub to gather pull requests data.");
+      System.out.println("  [2] Mining diff data using tri-gram algorithm.");
+      System.out.print("Input operation number: ");
+      String str = reader.readLine();
 
-    if (false && new File(new File("").getAbsolutePath().replace(
-        "pattern-detection", "camel")).exists()) {
-      //RepositoryCrawler.Crawl("");
-      List<File> files = new ArrayList<>();//RepositoryCrawler.getFilelist();
-      HashMap<String, String> fileMap = new HashMap<>();
-      System.out.println(files.size());
-
-      for (File file : files) {
-        String filename = file.getName();
-        String regex = "[\\s\\S]*" + File.separator + "head_\\d*"
-                       + File.separator + "([\\s\\S]*)";
-        Pattern p = Pattern.compile(regex);
-        Matcher mat = p.matcher(file.getPath());
-        String suffix = mat.replaceFirst("$1");
-
-        String originalFilePath = "";
-        if (!fileMap.containsKey(suffix)) {
-          String currentPath = new File("").getAbsolutePath()
-              .replace("pattern-detection",
-                       "camel" + File.separator);
-          originalFilePath = currentPath + suffix;
-        } else {
-          originalFilePath = fileMap.get(suffix);
-        }
-        fileMap.put(suffix, file.getAbsolutePath());
-
-        String originalXmlName = new File("").getAbsolutePath()
-                                 + File.separator + "xmls" + File.separator + i + "_"
-                                 + filename + "_org.xml";
-        String comparisonXmlName = new File("").getAbsolutePath()
-                                   + File.separator + "xmls" + File.separator + i + "_"
-                                   + filename + "_cmp.xml";
-        System.out.println(originalXmlName);
-        xmls.add(new String[]{originalXmlName, comparisonXmlName,
-                              file.getAbsolutePath()});
-        String cmd = "mono " + new File("").getAbsolutePath()
-                     + File.separator + "code2xml_bin" + File.separator
-                     + "code2xml_mono.exe" + " " + originalFilePath + " "
-                     + file.getAbsolutePath() + " " + originalXmlName + " "
-                     + comparisonXmlName;
-
-        System.out.println(cmd);
-
-        try {
-          Runtime.getRuntime().exec(cmd);
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
-
-        if (i++ > 11) {
-          break;
-        }
-      }
-    } else {
-      //RepositoryCrawler.Crawl(new File("").getAbsolutePath()
-                              //+ File.separator + "template-xmls");
-      Object[] files = null;//RepositoryCrawler.getFilelist().toArray();
-      Arrays.sort(files, new Comparator<Object>() {
-        @Override
-        public int compare(Object o1, Object o2) {
-          return ((File) o1).getName().compareTo(
-              ((File) o2).getName());
-        }
-      });
-
-      for (int c = 0; c < files.length; c += 2) {
-        xmls.add(new String[]{
-            ((File) files[c + 1]).getAbsolutePath(),
-            ((File) files[c]).getAbsolutePath(),
-            ((File) files[c + 1]).getName()});
-      }
+      if (str.equals("1"))
+        crawlGitHub();
+      else if (str.equals("2"))
+        miningDiffData();
+    } catch (IOException e) {
+      e.printStackTrace();
     }
+  }
 
-    i = 1;
-    XDiffGenerator generator = new XDiffGenerator();
+  private static void crawlGitHub() {
+    GitHubCrawler
+        githubCrawler = new GitHubCrawler(new File(Resources.getResource("java.csv").getFile()));
+    List<RepositoryInfo> repoInfoList = githubCrawler.crawl(10);
 
-    for (String[] xml : xmls) {
-      try {
-        String original = FileUtils.readFileToString(new File(xml[0]));
-        String comparison = FileUtils
-            .readFileToString(new File(xml[1]));
-        String diff = generator.generateDiffContent(original,
-                                                    comparison, System.lineSeparator());
+    DiffParser parser = new DiffParser(repoInfoList);
+    parser.getDiffs();
+  }
 
-        String[] lines = diff.split(System.lineSeparator());
-        String ref = lines[0];
-        List<Double> scoreList = new ArrayList<>();
-        LcsComparator comparator = new LcsComparator();
-        for (int j = 1; j < lines.length; j++) {
-          String line = lines[j];
-          double score = comparator.calculateSimilarity(ref, line);
-          scoreList.add(score);
-        }
-        System.out.println(scoreList.toString());
+  private static void miningDiffData() {
+    RepositoryCrawler crawler = new RepositoryCrawler("data");
+    List<File> diffFiles = crawler.crawl("_diffs.json");
 
+    List<String> allDiffs = new ArrayList<>();
+    addDiffsOfFile(diffFiles, allDiffs);
+    compareWithTrigram(allDiffs);
+  }
 
-        File saveFile = new File(new File("").getAbsolutePath()
-                                 + File.separator + "diffs" + File.separator + "diff"
-                                 + i + ".txt");
-        FileUtils.writeStringToFile(saveFile, xml[2] + "\n" + diff);
-        System.out.println(i + "done.");
-        i++;
-      } catch (IOException e) {
-        e.printStackTrace();
+  private static void addDiffsOfFile(List<File> diffFiles, List<String> allDiffs) {
+    try {
+      for (File file : diffFiles) {
+        ObjectMapper mapper = new ObjectMapper();
+        List<String> diffs = mapper.readValue(file, new TypeReference<List<String>>(){});
+        allDiffs.addAll(diffs);
       }
+    } catch (Exception e) {
+      e.printStackTrace();
     }
+  }
 
-    System.out.println("done.");
+  private static void compareWithTrigram(List<String> allDiffs) {
+    int size = allDiffs.size();
+    Comparator comparator = new TrigramComparator();
+    Set<Long> exclusion = new HashSet<>();
+    int scoreCount = 0;
+    try {
+      PrintWriter
+          writer = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File("tmp/scores_tri.txt"))));
+      for (int i = 0; i < size; i++) {
+        System.out.println("Comparing #" + i + "...");
+        String ref = allDiffs.get(i);
+        for (int j = i + 1; j < size; j++) {
+          if (exclusion.contains((long)(i+1)*(j+1))) continue;
+          float score = comparator.calculateSimilarity(ref, allDiffs.get(j));
+
+          if (score >= 0.75f) {
+            writer.print(i + "," + j + ",");
+            writer.printf("%.3f\n", score);
+            scoreCount++;
+            exclusion.add((long)(i+1)*(j+1));
+          }
+        }
+        System.out.println("\tSize of scores is " + scoreCount);
+      }
+      writer.close();
+      System.out.println("done.");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }

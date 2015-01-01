@@ -22,7 +22,8 @@ import java.util.Map;
  * Created by tokitake on 2015/01/01.
  */
 public class DataTest {
-  @Test
+  //@Test
+  // For data analysis, TO BE IMPLEMENTED AS A CLASS
   public void test() {
     try {
       CSVParser parser = CSVParser.parse(new File("tmp/scores_tri_trimmed.txt"), StandardCharsets.UTF_8, CSVFormat.DEFAULT);

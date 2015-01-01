@@ -48,7 +48,8 @@ public class DiffParser {
             String diff = line.substring(1);
             diff = StringUtils.strip(diff);
             if (diff.equals("") || diff.startsWith("//") ||
-                diff.startsWith("*") || diff.startsWith("/") || diff.endsWith("*/"))
+                diff.startsWith("*") || diff.startsWith("/") || diff.endsWith("*/") ||
+                diff.startsWith("import"))
               continue;
             builder.append(diff);
           } else if (line.startsWith("-")) {
@@ -57,6 +58,7 @@ public class DiffParser {
             if (builder.length() > 0) {
               String res = builder.toString();
               if (res.length() > thresholdLength) continue;
+              if (res.equals("}")) continue;
               changes.add(builder.toString());
               builder.setLength(0);
             }

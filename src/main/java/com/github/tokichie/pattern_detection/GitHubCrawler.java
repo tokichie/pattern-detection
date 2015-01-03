@@ -85,13 +85,18 @@ public class GitHubCrawler {
     return "";
   }
 
-  public void crawl() { this.crawl(0); }
+  public List<RepositoryInfo> crawl() {
+    List<RepositoryInfo> repoInfoList = this.crawl(0);
+    return repoInfoList;
+  }
 
-  public void crawl(int limit) {
+  public List<RepositoryInfo> crawl(int limit) {
     if (limit != 0) limit++;
     List<RepositoryInfo> repoInfoList = this.getRepositoryInfoList(limit);
     this.getRepositoryPullRequests(repoInfoList);
-    this.extractCommittedFiles(repoInfoList);
+   // this.extractCommittedFiles(repoInfoList);
+
+    return repoInfoList;
   }
 
   private List<RepositoryInfo> getRepositoryInfoList(int limit) {
@@ -238,7 +243,7 @@ public class GitHubCrawler {
   private void getDiffArchive(
       String repoIdentifier, String olderCommitId, String newerCommitId, int commitNumber) {
     String command =
-        new File("git_archive.sh").getAbsolutePath() + " "
+        new File("git_diff.sh").getAbsolutePath() + " "
         + repoIdentifier + " "
         + olderCommitId.substring(0, 6) + " "
         + newerCommitId.substring(0, 6) + " "
@@ -247,7 +252,6 @@ public class GitHubCrawler {
     try {
       Process process = Runtime.getRuntime().exec(command);
       process.waitFor();
-      if (process.exitValue() != 0) throw new Exception();
     } catch (Exception e) {
       e.printStackTrace();
     }

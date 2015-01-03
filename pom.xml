@@ -8,6 +8,13 @@
     <artifactId>pattern_detection</artifactId>
     <version>1.0.0</version>
 
+    <repositories>
+        <repository>
+            <id>releases</id>
+            <url>https://bitbucket.org/Nickmancol/simmetrics/raw/tip/mavenRepo/releases/</url>
+        </repository>
+    </repositories>
+
     <!-- General settings -->
     <properties>
         <maven.compiler.target>1.7</maven.compiler.target>
@@ -42,7 +49,7 @@
         <dependency>
             <groupId>com.jcabi</groupId>
             <artifactId>jcabi-github</artifactId>
-            <version>0.18</version>
+            <version>0.18.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -64,7 +71,11 @@
             <artifactId>org.eclipse.jgit</artifactId>
             <version>3.6.0.201411121045-m1</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.simmetrics</groupId>
+            <artifactId>simmetrics</artifactId>
+            <version>1.6.3</version>
+        </dependency>
 
 
         <!-- for test -->

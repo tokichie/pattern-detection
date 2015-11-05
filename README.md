@@ -3,6 +3,7 @@ pattern-detection [![Build Status](https://secure.travis-ci.org/tokichie/pattern
 
 # Test
 1. ```mvn test```
+2. 
 
 # Environment
 * IDE: IntelliJ IDEA
